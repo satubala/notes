@@ -1,227 +1,89 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ক্লাস ৫ ডিজিটাল নোটবুক</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Class 5 English - Unit 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --bg-light: #f8fbff;
-            --white: #ffffff;
-            --soft-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-            line-height: 1.6;
-        }
-
-        /* --- Header Section --- */
-        header {
-            background-color: var(--white);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            box-shadow: var(--soft-shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        header p {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        /* --- Search & Filter --- */
-        .controls {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .search-box {
-            width: 100%;
-            max-width: 400px;
-            padding: 12px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 30px;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-box:focus {
-            border-color: var(--accent-color);
-        }
-
-        /* --- Subject Grid --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .subject-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: var(--soft-shadow);
-            transition: transform 0.3s ease;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .subject-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .subject-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .chapter-list {
-            list-style: none;
-        }
-
-        .chapter-item {
-            padding: 10px;
-            background: #f1f7ff;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
-            color: #555;
-            font-size: 0.95rem;
-            transition: 0.2s;
-        }
-
-        .chapter-item:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .btn-read {
-            font-size: 0.8rem;
-            background: var(--accent-color);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 5px;
-        }
-
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.4rem; }
-            .container { grid-template-columns: 1fr; }
-        }
+        .unit-header { background: linear-gradient(180deg, #2D9B63 0%, #76BA99 100%); }
+        .stressed { font-weight: 800; color: #d97706; text-decoration: underline; cursor: pointer; }
+        .bubble { transition: transform 0.2s; }
+        .bubble:hover { transform: scale(1.02); }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
 
-<header>
-    <h1>পঞ্চম শ্রেণীর ডিজিটাল নোটবুক</h1>
-    <p>সকল বিষয়ের অধ্যায়ভিত্তিক নোট এবং সমাধান</p>
-</header>
-
-<div class="controls">
-    <input type="text" class="search-box" id="subjectSearch" placeholder="বিষয় খুঁজুন (যেমন: গণিত)..." onkeyup="filterSubjects()">
-</div>
-
-<main class="container" id="subjectContainer">
-    <!-- Bangla -->
-    <div class="subject-card">
-        <h3>বাংলা</h3>
-        <div class="chapter-list">
-            <a href="#" class="chapter-item">অধ্যায় ১: এই দেশ এই মানুষ <span class="btn-read">পড়ুন</span></a>
-            <a href="#" class="chapter-item">অধ্যায় ২: কাঞ্চনমালা আর কাঁকনমালা <span class="btn-read">পড়ুন</span></a>
+    <!-- Header following Class 5 English_7.jpg style -->
+    <header class="unit-header text-white p-6 rounded-b-3xl shadow-lg flex justify-between items-center">
+        <div>
+            <h1 class="text-4xl font-bold">Unit 1</h1>
+            <p class="text-xl">English for Today</p>
         </div>
-    </div>
+        <h2 class="text-3xl font-semibold italic">At the Library</h2>
+    </header>
 
-    <!-- English -->
-    <div class="subject-card">
-        <h3>English</h3>
-        <div class="chapter-list">
-            <a href="#" class="chapter-item">Unit 1: Hello! <span class="btn-read">Read</span></a>
-            <a href="#" class="chapter-item">Unit 2: See You! <span class="btn-read">Read</span></a>
-        </div>
-    </div>
+    <main class="max-w-4xl mx-auto p-6 space-y-10">
 
-    <!-- Math -->
-    <div class="subject-card">
-        <h3>গণিত</h3>
-        <div class="chapter-list">
-            <a href="#" class="chapter-item">অধ্যায় ১: গুণ <span class="btn-read">পড়ুন</span></a>
-            <a href="#" class="chapter-item">অধ্যায় ২: ভাগ <span class="btn-read">পড়ুন</span></a>
-            <a href="#" class="chapter-item">অধ্যায় ৩: চার প্রক্রিয়া সম্পর্কিত <span class="btn-read">পড়ুন</span></a>
-        </div>
-    </div>
+        <!-- Section 1.2: Interactive Dialogue -->
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h3 class="text-green-700 font-bold text-xl mb-4">1.2 Read and act out</h3>
+            <div class="space-y-4">
+                <div class="bubble bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                    <p><strong>Rina:</strong> <span class="clickable" onclick="speak('Hello! My name is Rina. Are you new here?')">"Hello! My name is Rina. Are you new here?"</span></p>
+                </div>
+                <div class="bubble bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <p><strong>Rupa:</strong> <span class="clickable" onclick="speak('Hi! I am Rupa. My family has just moved to this neighbourhood.')">"Hi! I'm Rupa. My family has just moved to this neighbourhood."</span></p>
+                </div>
+                <div class="bubble bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                    <p><strong>Omar:</strong> <span class="clickable" onclick="speak('Hi Rupa! I am Omar. It seems you like reading books.')">"Hi Rupa! I'm Omar. It seems you like reading books."</span></p>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-500 italic text-center">Click the text to hear the pronunciation!</p>
+        </section>
 
-    <!-- Science -->
-    <div class="subject-card">
-        <h3>প্রাথমিক বিজ্ঞান</h3>
-        <div class="chapter-list">
-            <a href="#" class="chapter-item">অধ্যায় ১: আমাদের পরিবেশ <span class="btn-read">পড়ুন</span></a>
-        </div>
-    </div>
+        <!-- Section 3.1: Stressed Syllables Exercise from Class 5 English_9.jpg -->
+        <section class="bg-yellow-50 p-8 rounded-2xl border-2 border-yellow-200">
+            <h3 class="text-yellow-800 font-bold text-xl mb-4 text-center">3.1 Language Focus: Stressed Syllables</h3>
+            <p class="mb-6 text-center">Clap your hands when you click the <span class="stressed">STRESSED</span> part!</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-lg">
+                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
+                    <span class="stressed uppercase">APP</span>-le
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
+                    TEA-<span class="stressed uppercase">cher</span>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
+                    to-<span class="stressed uppercase">MORR</span>-ow
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
+                    en-<span class="stressed uppercase">JOY</span>
+                </div>
+            </div>
+        </section>
 
-    <!-- BGS -->
-    <div class="subject-card">
-        <h3>বাংলাদেশ ও বিশ্বপরিচয়</h3>
-        <div class="chapter-list">
-            <a href="#" class="chapter-item">অধ্যায় ১: আমাদের মুক্তিযুদ্ধ <span class="btn-read">পড়ুন</span></a>
-        </div>
-    </div>
+    </main>
 
-    <!-- Religion -->
-    <div class="subject-card">
-        <h3>ইসলাম ও নৈতিক শিক্ষা</h3>
-        <div class="chapter-list">
-            <a href="#" class="chapter-item">অধ্যায় ১: আকাইদ <span class="btn-read">পড়ুন</span></a>
-        </div>
-    </div>
-</main>
+    <footer class="text-center p-10 text-gray-400">
+        <p>Interactive Lesson • Class 5 English</p>
+    </footer>
 
-<script>
-    function filterSubjects() {
-        let input = document.getElementById('subjectSearch').value.toLowerCase();
-        let cards = document.getElementsByClassName('subject-card');
-
-        for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-            if (title.includes(input)) {
-                cards[i].style.display = "";
-            } else {
-                cards[i].style.display = "none";
-            }
+    <script>
+        // Use Browser Text-to-Speech
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.9; // Slightly slower for learners
+            window.speechSynthesis.speak(utterance);
         }
-    }
-</script>
 
+        // Simple Audio Feedback
+        function playClap() {
+            const audio = new Audio('https://www.soundjay.com/human/sounds/applause-01.mp3');
+            audio.volume = 0.2;
+            audio.play();
+            alert("👏 Clap!");
+        }
+    </script>
 </body>
 </html>
