@@ -1,88 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 5 English - Unit 1</title>
+    <title>Class 5 English - Interactive Lesson</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .unit-header { background: linear-gradient(180deg, #2D9B63 0%, #76BA99 100%); }
-        .stressed { font-weight: 800; color: #d97706; text-decoration: underline; cursor: pointer; }
-        .bubble { transition: transform 0.2s; }
-        .bubble:hover { transform: scale(1.02); }
+        .unit-gradient { background: linear-gradient(135deg, #1e7d4d 0%, #4ade80 100%); }
+        .section-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; }
+        .section-card:hover { transform: translateY(-5px); shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .interactive-btn { cursor: pointer; border-bottom: 2px dashed #059669; }
+        .stress-text { font-weight: 800; color: #b45309; }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-    <!-- Header following Class 5 English_7.jpg style -->
-    <header class="unit-header text-white p-6 rounded-b-3xl shadow-lg flex justify-between items-center">
-        <div>
-            <h1 class="text-4xl font-bold">Unit 1</h1>
-            <p class="text-xl">English for Today</p>
+    <!-- Header Section (Reference: Class 5 English_7.jpg) -->
+    <header class="unit-gradient text-white p-10 rounded-b-[50px] shadow-xl mb-8">
+        <div class="max-w-5xl mx-auto flex justify-between items-end">
+            <div>
+                <h1 class="text-6xl font-black">Unit 1</h1>
+                <p class="text-2xl opacity-90 mt-2 font-medium">English for Today</p>
+            </div>
+            <div class="text-right">
+                <h2 class="text-4xl font-bold italic border-b-4 border-white pb-2">At the Library</h2>
+            </div>
         </div>
-        <h2 class="text-3xl font-semibold italic">At the Library</h2>
     </header>
 
-    <main class="max-w-4xl mx-auto p-6 space-y-10">
+    <main class="max-w-5xl mx-auto px-6 space-y-12 pb-20">
 
-        <!-- Section 1.2: Interactive Dialogue -->
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h3 class="text-green-700 font-bold text-xl mb-4">1.2 Read and act out</h3>
-            <div class="space-y-4">
-                <div class="bubble bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                    <p><strong>Rina:</strong> <span class="clickable" onclick="speak('Hello! My name is Rina. Are you new here?')">"Hello! My name is Rina. Are you new here?"</span></p>
-                </div>
-                <div class="bubble bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                    <p><strong>Rupa:</strong> <span class="clickable" onclick="speak('Hi! I am Rupa. My family has just moved to this neighbourhood.')">"Hi! I'm Rupa. My family has just moved to this neighbourhood."</span></p>
-                </div>
-                <div class="bubble bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
-                    <p><strong>Omar:</strong> <span class="clickable" onclick="speak('Hi Rupa! I am Omar. It seems you like reading books.')">"Hi Rupa! I'm Omar. It seems you like reading books."</span></p>
+        <!-- ১.২ রিড অ্যান্ড অ্যাক্ট আউট (Reference: Class 5 English_7.jpg, 8.jpg) -->
+        <section class="section-card bg-white p-8 rounded-3xl">
+            <h3 class="text-2xl font-bold text-green-700 mb-6 flex items-center">
+                <span class="mr-2">📖</span> 1.2 Read and act out
+            </h3>
+            <div class="space-y-4 text-lg leading-relaxed bg-green-50 p-6 rounded-2xl border border-green-100">
+                <p onclick="speak('Rina and Omar are in the public library.')" class="interactive-btn inline-block">Rina and Omar are in the public library. They have come to the library to read books.</p>
+                
+                <div class="mt-6 space-y-3">
+                    <p><strong>Rina:</strong> <span onclick="speak('Hello! My name is Rina. Are you new here?')" class="interactive-btn">"Hello! My name is Rina. Are you new here?"</span></p>
+                    <p><strong>Rupa:</strong> <span onclick="speak('Hi! I am Rupa. My family has just moved to this neighbourhood.')" class="interactive-btn">"Hi! I'm Rupa. My family has just moved to this neighbourhood."</span></p>
+                    <p><strong>Omar:</strong> <span onclick="speak('I enjoy reading biographies of famous people.')" class="interactive-btn">"I enjoy reading biographies of famous people."</span></p>
+                    <p><strong>Rina:</strong> <span onclick="speak('Sure! I find science fiction very interesting.')" class="interactive-btn">"Sure! I find science fiction very interesting."</span></p>
                 </div>
             </div>
-            <p class="mt-4 text-sm text-gray-500 italic text-center">Click the text to hear the pronunciation!</p>
         </section>
 
-        <!-- Section 3.1: Stressed Syllables Exercise from Class 5 English_9.jpg -->
-        <section class="bg-yellow-50 p-8 rounded-2xl border-2 border-yellow-200">
-            <h3 class="text-yellow-800 font-bold text-xl mb-4 text-center">3.1 Language Focus: Stressed Syllables</h3>
-            <p class="mb-6 text-center">Clap your hands when you click the <span class="stressed">STRESSED</span> part!</p>
+        <!-- ৩.১ ল্যাঙ্গুয়েজ ফোকাস: সিলেবল (Reference: Class 5 English_9.jpg) -->
+        <section class="section-card bg-amber-50 p-8 rounded-3xl border-2 border-amber-200">
+            <h3 class="text-2xl font-bold text-amber-900 mb-4 text-center">3.1 Language Focus: Stressed Syllables</h3>
+            <p class="text-center mb-8 italic">Clap your hands when you say the stressed syllables!</p>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-lg">
-                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
-                    <span class="stressed uppercase">APP</span>-le
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
+                    <span class="stress-text uppercase">APP</span>-le
                 </div>
-                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
-                    TEA-<span class="stressed uppercase">cher</span>
+                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
+                    TEA-<span class="stress-text uppercase">cher</span>
                 </div>
-                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
-                    to-<span class="stressed uppercase">MORR</span>-ow
+                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
+                    to-<span class="stress-text uppercase">MORR</span>-ow
                 </div>
-                <div class="p-4 bg-white rounded-xl shadow-sm hover:shadow-md cursor-pointer" onclick="playClap()">
-                    en-<span class="stressed uppercase">JOY</span>
+                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
+                    bi-o-<span class="stress-text uppercase">GRAPH</span>-ies
+                </div>
+            </div>
+        </section>
+
+        <!-- ৩.২ স্ট্রেসড ওয়ার্ডস (Reference: Class 5 English_10.jpg) -->
+        <section class="section-card bg-white p-8 rounded-3xl border border-blue-100 shadow-sm">
+            <h3 class="text-2xl font-bold text-blue-800 mb-6 underline">3.2 Language Focus: Stressed Words</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <tr class="bg-blue-600 text-white">
+                        <th class="p-4 rounded-tl-xl">Sentence</th>
+                        <th class="p-4 rounded-tr-xl">Why we stress the bold word...</th>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">I love to read <strong>storybooks</strong>.</td>
+                        <td class="p-4">Tells what kind of books</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">She has a <strong>red</strong> bicycle.</td>
+                        <td class="p-4">Tells the color of the object</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- ৩.২.২ গলার স্বর ওঠা-নামা (Reference: Class 5 English_11.jpg, 12.jpg) -->
+        <section class="section-card bg-indigo-50 p-8 rounded-3xl">
+            <h3 class="text-2xl font-bold text-indigo-900 mb-6">3.2.2 Voices Going Up (⤴) and Down (⤵)</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border-l-8 border-green-500">
+                    <p class="font-bold text-green-700 mb-4">Voice goes UP (⤴) for:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Greetings (Hello!)</li>
+                        <li>Yes/No questions (Are you new here?)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-l-8 border-red-500">
+                    <p class="font-bold text-red-700 mb-4">Voice goes DOWN (⤵) for:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Statements (My name is Rina.)</li>
+                        <li>Wh-questions (How are you?)</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="text-center p-10 text-gray-400">
-        <p>Interactive Lesson • Class 5 English</p>
+    <footer class="text-center p-12 bg-gray-900 text-gray-400">
+        <p class="text-lg">Class 5 English • Unit 1 Digital Version</p>
+        <p class="mt-2 text-sm">Interactive Web Content Creator - 2026</p>
     </footer>
 
     <script>
-        // Use Browser Text-to-Speech
         function speak(text) {
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.rate = 0.9; // Slightly slower for learners
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
             window.speechSynthesis.speak(utterance);
-        }
-
-        // Simple Audio Feedback
-        function playClap() {
-            const audio = new Audio('https://www.soundjay.com/human/sounds/applause-01.mp3');
-            audio.volume = 0.2;
-            audio.play();
-            alert("👏 Clap!");
         }
     </script>
 </body>
