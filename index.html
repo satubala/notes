@@ -186,6 +186,79 @@
                 <div class="accordion-content">
                     <div class="inner-padding">
                         এই অধ্যায়ে আমরা জীবজন্তুর বেঁচে থাকার জন্য পরিবেশের গুরুত্ব এবং তাদের বিভিন্ন ধরণের আবাসস্থল সম্পর্কে বিস্তারিত শিখব।
+
+                        <!-- অনুশীলনী সেকশন -->
+<div class="chapter-card" id="exercise-section">
+    <div class="section-header">📚 অনুশীলনী (অধ্যায় ১)</div>
+    
+    <!-- MCQ ১ -->
+    <div class="quiz-item">
+        <p><strong>১. জলজ উদ্ভিদের অনন্য বৈশিষ্ট্য কোনটি?</strong></p>
+        <div class="quiz-options">
+            <button class="opt-btn" onclick="checkAnswer(this, false)">পাতা পুরু</button>
+            <button class="opt-btn" onclick="checkAnswer(this, true)">বায়ুকুঠুরি</button>
+            <button class="opt-btn" onclick="checkAnswer(this, false)">ফুল</button>
+            <button class="opt-btn" onclick="checkAnswer(this, false)">কাঁটায়ুক্ত</button>
+        </div>
+    </div>
+
+    <!-- MCQ ২ -->
+    <div class="quiz-item" style="margin-top: 20px;">
+        <p><strong>২. মাংসাশী প্রাণীর প্রধান বৈশিষ্ট্য কোনটি?</strong></p>
+        <div class="quiz-options">
+            <button class="opt-btn" onclick="checkAnswer(this, false)">দ্রুত গতি</button>
+            <button class="opt-btn" onclick="checkAnswer(this, false)">বড় আকৃতি</button>
+            <button class="opt-btn" onclick="checkAnswer(this, true)">তীক্ষ্ণ দাঁত</button>
+            <button class="opt-btn" onclick="checkAnswer(this, false)">চর্বির স্তর</button>
+        </div>
+    </div>
+
+    <!-- MCQ ৩ -->
+    <div class="quiz-item" style="margin-top: 20px;">
+        <p><strong>৩. শ্বাসমূল কোন উদ্ভিদে পাওয়া যায়?</strong></p>
+        <div class="quiz-options">
+            <button class="opt-btn" onclick="checkAnswer(this, false)">হিজল</button>
+            <button class="opt-btn" onclick="checkAnswer(this, true)">সুন্দরী</button>
+            <button class="opt-btn" onclick="checkAnswer(this, false)">পাকুড়</button>
+            <button class="opt-btn" onclick="checkAnswer(this, false)">কচুরিপানা</button>
+        </div>
+    </div>
+
+    <!-- শূন্যস্থান পূরণ -->
+    <div class="section-header" style="background: #fef3c7;">২. শূন্যস্থান পূরণ</div>
+    <div class="fill-gap">
+        <p>ক) জলজ উদ্ভিদকে পানিতে ভেসে থাকতে সাহায্য করে <span class="ans-trigger" onclick="this.innerText='বায়ুকুঠুরি'">..........</span>।</p>
+        <p>খ) তীব্র ঠান্ডায় প্রাণীর দেহকে গরম রাখে <span class="ans-trigger" onclick="this.innerText='চর্বিস্তর'">..........</span>।</p>
+        <p>গ) ছায়াযুক্ত স্থানের একটি উদ্ভিদ হলো <span class="ans-trigger" onclick="this.innerText='ফার্ন'">..........</span>।</p>
+    </div>
+</div>
+
+<style>
+    /* কুইজ স্টাইল */
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .opt-btn { 
+        padding: 10px; border: 1px solid #ddd; border-radius: 8px; 
+        background: white; cursor: pointer; transition: 0.3s; font-family: 'SolaimanLipi';
+    }
+    .correct { background-color: #4ade80 !important; color: white; border-color: #22c55e; }
+    .wrong { background-color: #f87171 !important; color: white; border-color: #dc2626; }
+    
+    .fill-gap { padding: 10px; background: #fffbeb; border-radius: 8px; line-height: 2; }
+    .ans-trigger { color: #d97706; font-weight: bold; cursor: pointer; border-bottom: 2px dashed #d97706; padding: 0 5px; }
+</style>
+
+<script>
+    function checkAnswer(btn, isCorrect) {
+        // রিকোয়েস্ট অনুযায়ী ফিডব্যাক
+        if(isCorrect) {
+            btn.classList.add('correct');
+            alert("সঠিক উত্তর! 🎉");
+        } else {
+            btn.classList.add('wrong');
+            alert("ভুল উত্তর, আবার চেষ্টা করো।");
+        }
+    }
+</script>
                     </div>
                 </div>
             </div>
