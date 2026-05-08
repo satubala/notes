@@ -279,32 +279,61 @@
         <div class="page-footer">5-6</div>
     </div>
 
-    <script>
-        const synth = window.speechSynthesis;
+   <script>
+    const synth = window.speechSynthesis;
+    let maleVoice = null;
 
-        function speak(text, element) {
-            synth.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.rate = 0.85; // Natural learning speed
-            
-            element.style.backgroundColor = "var(--highlight-yellow)";
-            
-            utterance.onend = () => {
-                element.style.backgroundColor = "transparent";
-            };
+    // Function to find a male voice
+    function loadVoices() {
+        const voices = synth.getVoices();
+        // Look for common male voice identifiers
+        maleVoice = voices.find(voice => 
+            voice.name.includes('Male') || 
+            voice.name.includes('David') || 
+            voice.name.includes('Arthur') || 
+            voice.name.includes('Daniel') ||
+            voice.name.includes('Google US English') // Often defaults to male or neutral
+        );
+    }
 
-            synth.speak(utterance);
+    // Chrome and other browsers load voices asynchronously
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function speak(text, element) {
+        synth.cancel();
+        
+        if (!text) return;
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        
+        // Apply the male voice if found
+        if (maleVoice) {
+            utterance.voice = maleVoice;
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const tapables = document.querySelectorAll('.tap-to-read');
-            tapables.forEach(el => {
-                el.addEventListener('click', (e) => {
-                    // Prevent reading the speaker name separately if clicked
-                    speak(el.innerText, el);
-                });
+        utterance.rate = 0.85; 
+        utterance.pitch = 0.9; // Slightly lower pitch for a deeper male tone
+        
+        element.style.backgroundColor = "var(--highlight-yellow)";
+        
+        utterance.onend = () => {
+            element.style.backgroundColor = "transparent";
+        };
+
+        synth.speak(utterance);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadVoices();
+        const tapables = document.querySelectorAll('.tap-to-read');
+        tapables.forEach(el => {
+            el.addEventListener('click', () => {
+                speak(el.innerText, el);
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
