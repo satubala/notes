@@ -3,180 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বিজ্ঞান পাঠ্যসূচী - ৫ম শ্রেণি</title>
+    <title>প্রাথমিক বিজ্ঞান - ৫ম শ্রেণি</title>
     
-    <!-- Embedding SolaimanLipi from a reliable CDN -->
+    <!-- SolaimanLipi Font Embed -->
     <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet">
 
     <style>
-        /* CSS STYLES */
         :root {
-            --primary-bg: #c7d5e8; /* Matches the blue shade in Class 5 Science_6.jpg */
-            --hover-bg: #b0c4de;
-            --text-color: #1a2a3a;
-            --border-color: #000000;
+            --bg-blue: #c7d5e8; /* ছবির ব্যাকগ্রাউন্ড কালার */
+            --border-black: #000000;
+            --hover-blue: #b0c4de;
         }
 
         body {
             font-family: 'SolaimanLipi', Arial, sans-serif;
-            background-color: #f0f4f8;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 15px;
+            padding: 10px;
             display: flex;
             justify-content: center;
         }
 
-        .container {
+        .main-wrapper {
             width: 100%;
-            max-width: 500px;
-            border: 2px solid var(--border-color);
-            background-color: white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 600px;
+            border: 2px solid var(--border-black);
+            background: #fff;
+        }
+
+        .header-title {
+            text-align: center;
+            background: #2c3e50;
+            color: white;
+            margin: 0;
+            padding: 15px;
+            font-size: 1.5rem;
         }
 
         .accordion-item {
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-black);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
         }
 
         .accordion-header {
-            background-color: var(--primary-bg);
-            padding: 12px 15px;
+            background-color: var(--bg-blue);
             display: flex;
             cursor: pointer;
-            transition: 0.2s;
-            align-items: center;
+            transition: 0.3s;
+            align-items: stretch;
         }
 
         .accordion-header:hover {
-            background-color: var(--hover-bg);
+            background-color: var(--hover-blue);
         }
 
-        .chapter-num {
-            width: 80px;
+        .chapter-label {
+            padding: 12px 10px;
+            width: 90px;
             font-weight: bold;
-            border-right: 1px solid var(--border-color);
-            margin-right: 15px;
+            border-right: 1px solid var(--border-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
-        .chapter-title {
+        .chapter-name {
+            padding: 12px 15px;
             flex-grow: 1;
-            font-weight: 500;
+            display: flex;
+            align-items: center;
         }
 
-        .icon {
-            font-size: 1.2rem;
+        .status-icon {
+            padding: 12px;
+            display: flex;
+            align-items: center;
             font-weight: bold;
-            transition: transform 0.3s;
         }
 
-        /* Content Area */
+        /* Content Section */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            background-color: #ffffff;
+            background-color: #fafafa;
         }
 
-        .content-inner {
-            padding: 15px;
-            font-size: 0.95rem;
-            color: #444;
-            line-height: 1.6;
+        .inner-text {
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            line-height: 1.7;
+            color: #333;
         }
 
-        /* Active State Logic */
+        /* Toggle Action */
         .accordion-item.active .accordion-content {
-            max-height: 300px; /* Adjust based on content length */
-        }
-
-        .accordion-item.active .icon {
-            transform: rotate(45deg);
+            max-height: 500px; /* কন্টেন্ট অনুযায়ী বাড়বে */
         }
 
         .accordion-item.active .accordion-header {
-            background-color: #cbdcf0;
+            background-color: #a8bcd8;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 480px) {
+            .chapter-label { width: 70px; font-size: 14px; }
+            .chapter-name { font-size: 15px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container" id="chapterList">
-    <!-- Items are based on the table in Class 5 Science_6.jpg -->
-    
+<div class="main-wrapper">
+    <h2 class="header-title">প্রাথমিক বিজ্ঞান (অধ্যায়সমূহ)</h2>
+
+    <!-- Chapter 1 -->
     <div class="accordion-item">
         <div class="accordion-header">
-            <div class="chapter-num">অধ্যায় ১</div>
-            <div class="chapter-title">জীবের আবাসস্থল</div>
-            <div class="icon">+</div>
+            <div class="chapter-label">অধ্যায় ১</div>
+            <div class="chapter-name">জীবের আবাসস্থল</div>
+            <div class="status-icon">+</div>
         </div>
         <div class="accordion-content">
-            <div class="content-inner">এখানে এই অধ্যায়ের বিস্তারিত আলোচনা, নোটস এবং প্রশ্ন উত্তর থাকবে।</div>
+            <div class="inner-text">জীবের বেঁচে থাকার জন্য প্রয়োজনীয় উপাদান এবং তাদের আবাসস্থল সম্পর্কে বিস্তারিত।</div>
         </div>
     </div>
 
+    <!-- Chapter 2 -->
     <div class="accordion-item">
         <div class="accordion-header">
-            <div class="chapter-num">অধ্যায় ২</div>
-            <div class="chapter-title">জীব ও পরিবেশের পারস্পরিক নির্ভরশীলতা</div>
-            <div class="icon">+</div>
+            <div class="chapter-label">অধ্যায় ২</div>
+            <div class="chapter-name">জীব ও পরিবেশের পারস্পরিক নির্ভরশীলতা</div>
+            <div class="status-icon">+</div>
         </div>
         <div class="accordion-content">
-            <div class="content-inner">পরিবেশের উপাদানসমূহের একে অপরের ওপর নির্ভরতা নিয়ে বিস্তারিত তথ্য।</div>
+            <div class="inner-text">বাস্তুসংস্থান এবং উদ্ভিদ ও প্রাণীর একে অপরের ওপর নির্ভরশীলতা।</div>
         </div>
     </div>
 
+    <!-- Chapter 3 -->
     <div class="accordion-item">
         <div class="accordion-header">
-            <div class="chapter-num">অধ্যায় ৩</div>
-            <div class="chapter-title">খাদ্য</div>
-            <div class="icon">+</div>
+            <div class="chapter-label">অধ্যায় ৩</div>
+            <div class="chapter-name">খাদ্য</div>
+            <div class="status-icon">+</div>
         </div>
         <div class="accordion-content">
-            <div class="content-inner">পুষ্টি, সুষম খাদ্য এবং খাদ্য সংরক্ষণের উপায়।</div>
+            <div class="inner-text">সুষম খাদ্য, খাদ্যের উৎস এবং পুষ্টির প্রয়োজনীয়তা।</div>
         </div>
     </div>
 
+    <!-- Chapter 4 -->
     <div class="accordion-item">
         <div class="accordion-header">
-            <div class="chapter-num">অধ্যায় ৪</div>
-            <div class="chapter-title">বয়ঃসন্ধিকাল</div>
-            <div class="icon">+</div>
+            <div class="chapter-label">অধ্যায় ৪</div>
+            <div class="chapter-name">বয়ঃসন্ধিকাল</div>
+            <div class="status-icon">+</div>
         </div>
         <div class="accordion-content">
-            <div class="content-inner">শারীরিক ও মানসিক পরিবর্তন এবং এই সময়ে করণীয়।</div>
+            <div class="inner-text">বয়ঃসন্ধিকালের পরিবর্তন এবং স্বাস্থ্যবিধি।</div>
         </div>
     </div>
 
+    <!-- Chapter 5 -->
     <div class="accordion-item">
         <div class="accordion-header">
-            <div class="chapter-num" style="border-right: none;">শব্দকোষ</div>
-            <div class="chapter-title"></div>
-            <div class="icon">+</div>
+            <div class="chapter-label">অধ্যায় ৫</div>
+            <div class="chapter-name">পদার্থের গঠন</div>
+            <div class="status-icon">+</div>
         </div>
         <div class="accordion-content">
-            <div class="content-inner">বইয়ের গুরুত্বপূর্ণ শব্দের অর্থসমূহ।</div>
+            <div class="inner-text">অণু, পরমাণু এবং পদার্থের বিভিন্ন অবস্থা।</div>
         </div>
     </div>
+
+    <!-- Chapter 6 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ৬</div>
+            <div class="chapter-name">শক্তির রূপান্তর</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">শক্তির বিভিন্ন উৎস এবং এক রূপ থেকে অন্য রূপে পরিবর্তন।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 7 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ৭</div>
+            <div class="chapter-name">বলের ধারণা</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">স্থির এবং গতিশীল বস্তুর ওপর বলের প্রভাব।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 8 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ৮</div>
+            <div class="chapter-name">ভূমিরূপ</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">পৃথিবীর উপরিভাগের বিভিন্ন গঠন এবং পরিবর্তন।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 9 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ৯</div>
+            <div class="chapter-name">পরিবেশ সংরক্ষণ</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">দূষণ রোধ এবং পরিবেশ রক্ষার উপায়।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 10 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ১০</div>
+            <div class="chapter-name">পৃথিবীর গতি</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">আহ্নিক গতি এবং বার্ষিক গতির বিস্তারিত আলোচনা।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 11 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ১১</div>
+            <div class="chapter-name">জলবায়ু পরিবর্তন</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">আবহাওয়া ও জলবায়ুর পার্থক্য এবং গ্রিনহাউস প্রভাব।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 12 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ১২</div>
+            <div class="chapter-name">আমাদের জীবনে প্রযুক্তি</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">কৃষি, শিক্ষা ও চিকিৎসায় বিজ্ঞানের অবদান।</div>
+        </div>
+    </div>
+
+    <!-- Chapter 13 -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label">অধ্যায় ১৩</div>
+            <div class="chapter-name">সমস্যা সমাধানে তথ্য ও যোগাযোগ প্রযুক্তি</div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">ইন্টারনেট ও আধুনিক যোগাযোগ মাধ্যমের ব্যবহার।</div>
+        </div>
+    </div>
+
+    <!-- Glossary / শব্দকোষ -->
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-label" style="border-right: none;">শব্দকোষ</div>
+            <div class="chapter-name"></div>
+            <div class="status-icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="inner-text">বইয়ে ব্যবহৃত গুরুত্বপূর্ণ সংজ্ঞাসমূহ।</div>
+        </div>
+    </div>
+
 </div>
 
 <script>
-    // JAVASCRIPT LOGIC
     document.querySelectorAll('.accordion-header').forEach(header => {
         header.addEventListener('click', () => {
-            const currentItem = header.parentElement;
+            const item = header.parentElement;
+            const icon = header.querySelector('.status-icon');
             
-            // Toggle active class
-            const isActive = currentItem.classList.contains('active');
-            
-            // Close all items first (Accordian effect)
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                item.classList.remove('active');
+            // Close other open items
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.status-icon').innerText = '+';
+                }
             });
 
-            // If it wasn't active, open it
-            if (!isActive) {
-                currentItem.classList.add('active');
-            }
+            // Toggle current item
+            const isActive = item.classList.toggle('active');
+            icon.innerText = isActive ? '−' : '+';
         });
     });
 </script>
