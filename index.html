@@ -1,248 +1,66 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Science App - Class 5</title>
-    
-    <!-- SolaimanLipi Font -->
-    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet">
-
     <style>
-        :root {
-            --primary: #1e3a8a; 
-            --secondary: #c7d5e8;      
-            --accent: #3b82f6;
-            --success: #22c55e;
-            --danger: #ef4444;
-            --bg: #f3f4f6;
-            --text: #1f2937;
+        .container { max-width: 600px; margin: 20px auto; font-family: 'Arial', sans-serif; }
+        .lesson-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .audio-row { 
+            display: flex; align-items: center; gap: 15px; padding: 12px;
+            margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;
+            transition: all 0.2s;
         }
-
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-        body {
-            font-family: 'SolaimanLipi', Arial, sans-serif;
-            background-color: var(--bg);
-            margin: 0;
-            padding-top: 60px; 
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* App Header */
-        .app-header {
-            position: fixed; top: 0; left: 0; right: 0; height: 60px;
-            background-color: var(--primary); color: white;
-            display: flex; align-items: center; padding: 0 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;
-        }
-
-        .app-header h1 { font-size: 1.2rem; margin: 0; }
-
-        /* Main Container */
-        .app-container { max-width: 600px; margin: 20px auto; padding: 0 10px; }
-
-        .app-card {
-            background: white; border: 1px solid #ddd;
-            border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Accordion Header */
-        .accordion-item { border-bottom: 1px solid #eee; }
-        .accordion-header {
-            background-color: var(--secondary); display: flex;
-            cursor: pointer; min-height: 60px; align-items: center;
-        }
-
-        .chapter-badge {
-            width: 80px; font-weight: bold; text-align: center;
-            border-right: 1px solid rgba(0,0,0,0.1); font-size: 0.9rem;
-        }
-
-        .chapter-title { padding: 0 15px; flex-grow: 1; font-weight: 600; }
-
-        .arrow-icon { padding: 0 15px; transition: transform 0.3s; }
-
-        /* Content Area */
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; background: #fff; }
-        .inner-padding { padding: 20px; }
-        .accordion-item.active .accordion-content { max-height: 5000px; }
-        .accordion-item.active .arrow-icon { transform: rotate(180deg); }
-
-        /* Habitat Section */
-        .habitat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
-        .habitat-box { 
-            background: #f8fafc; padding: 15px; border-radius: 8px; text-align: center; 
-            cursor: pointer; border: 1px solid #cbd5e1; font-weight: bold;
-        }
-        .detail-view { 
-            display: none; background: #fffbeb; border: 1px solid #fcd34d; 
-            padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem; 
-        }
-
-        /* Table */
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
-        th { background: #f1f5f9; }
-
-        /* Exercise Styles */
-        .section-header { 
-            background: var(--primary); color: white; padding: 10px 15px; 
-            border-radius: 6px; margin: 25px 0 15px 0; font-size: 1rem;
-        }
-        
-        .quiz-item { margin-bottom: 20px; background: #f9fafb; padding: 15px; border-radius: 10px; }
-        .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        
-        .opt-btn { 
-            padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; 
-            background: white; cursor: pointer; font-family: inherit; font-size: 0.9rem;
-        }
-        .correct { background-color: var(--success) !important; color: white; border-color: #15803d; }
-        .wrong { background-color: var(--danger) !important; color: white; border-color: #b91c1c; }
-
-        .fill-gap-box { background: #f0fdf4; padding: 15px; border-radius: 10px; border: 1px solid #bbf7d0; }
-        .ans-trigger { 
-            color: #166534; font-weight: bold; cursor: pointer; 
-            border-bottom: 2px dashed #166534; padding: 0 4px; 
-        }
-
-        .qa-box { background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 15px; }
-        .qa-box strong { color: var(--primary); display: block; margin-bottom: 5px; }
-
-        footer { text-align: center; padding: 40px 0; color: #6b7280; font-size: 0.85rem; }
+        .audio-row:hover { background-color: #f0f7ff; border-color: #007bff; }
+        .play-icon { font-size: 20px; color: #007bff; }
+        .stress { font-weight: bold; color: #d32f2f; text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <header class="app-header">
-        <h1>🔬 ৫ম শ্রেণি বিজ্ঞান: ডিজিটাল গাইড</h1>
-    </header>
+<div class="container">
+    <div class="lesson-card">
+        <h2>Unit 1: At the Library</h2>
+        <p>Click any sentence to hear me read it!</p>
 
-    <main class="app-container">
-        <div class="app-card">
-            
-            <!-- অধ্যায় ১ -->
-            <div class="accordion-item active">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ১</div>
-                    <div class="chapter-title">জীবের আবাসস্থল</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                
-                <div class="accordion-content">
-                    <div class="inner-padding">
-                        <p><strong>মূল আলোচনা:</strong> কোনো নির্দিষ্ট স্থানে জীবের বেঁচে থাকার জন্য প্রয়োজনীয় সকল উপাদান উপস্থিত থাকলে তাকে ওই জীবের আবাসস্থল বলে।</p>
-                        
-                        <!-- আবাসস্থল সেকশন -->
-                        <div class="habitat-grid">
-                            <div class="habitat-box" onclick="showInfo('h1')">🌲 বনজ</div>
-                            <div class="habitat-box" onclick="showInfo('h2')">🌵 মরুভূমি</div>
-                            <div class="habitat-box" onclick="showInfo('h3')">🌊 জলজ</div>
-                            <div class="habitat-box" onclick="showInfo('h4')">❄️ মেরু</div>
-                        </div>
-
-                        <div id="h1" class="detail-view"><strong>বনজ:</strong> এখানে প্রচুর গাছপালা থাকে। উদাহরণ: সুন্দরবন। রয়েল বেঙ্গল টাইগার ও হরিণ এখানে বাস করে।</div>
-                        <div id="h2" class="detail-view"><strong>মরুভূমি:</strong> শুষ্ক ও বালুকাময় স্থান। উট ও ক্যাকটাস এখানকার প্রধান জীব।</div>
-                        <div id="h3" class="detail-view"><strong>জলজ:</strong> পুকুর, নদী ও সমুদ্র। মাছ, কচুরিপানা ও শাপলা এখানে বাস করে।</div>
-                        <div id="h4" class="detail-view"><strong>মেরু অঞ্চল:</strong> সারা বছর বরফে ঢাকা থাকে। পেঙ্গুইন ও শ্বেত ভাল্লুক এখানে দেখা যায়।</div>
-
-                        <!-- ১. সঠিক উত্তর -->
-                        <div class="section-header">১. সঠিক উত্তরের টিক চিহ্ন দাও</div>
-                        <div class="quiz-item">
-                            <p><strong>(ক) জলজ উদ্ভিদের অনন্য বৈশিষ্ট্য কোনটি?</strong></p>
-                            <div class="quiz-options">
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">পাতা পুরু</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, true)">বায়ুকুঠুরি</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">কাঁটায়ুক্ত</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">ফুল</button>
-                            </div>
-                        </div>
-                        <div class="quiz-item">
-                            <p><strong>(খ) মাংসাশী প্রাণীর প্রধান বৈশিষ্ট্য কোনটি?</strong></p>
-                            <div class="quiz-options">
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">দ্রুত গতি</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, true)">তীক্ষ্ণ দাঁত</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">চর্বির স্তর</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">রঙ পরিবর্তন</button>
-                            </div>
-                        </div>
-
-                        <!-- ২. শূন্যস্থান পূরণ -->
-                        <div class="section-header">২. শূন্যস্থান পূরণ করো</div>
-                        <div class="fill-gap-box">
-                            <p>১. জলজ উদ্ভিদকে পানিতে ভেসে থাকতে সাহায্য করে <span class="ans-trigger" onclick="this.innerText='বায়ুকুঠুরি'">.........</span>।</p>
-                            <p>২. তীব্র ঠান্ডায় মেরু অঞ্চলের প্রাণীর দেহ গরম রাখে <span class="ans-trigger" onclick="this.innerText='চর্বিস্তর'">.........</span>।</p>
-                            <p>৩. ছায়াযুক্ত স্যাঁতসেঁতে স্থানে জন্মানো একটি উদ্ভিদ হলো <span class="ans-trigger" onclick="this.innerText='ফার্ন'">.........</span>।</p>
-                        </div>
-
-                        <!-- ৩. সংক্ষিপ্ত উত্তর -->
-                        <div class="section-header">৩. সংক্ষিপ্ত উত্তর প্রশ্ন</div>
-                        <div class="qa-box">
-                            <strong>(ক) জীবের আবাসস্থল বলতে কী বুঝায়?</strong>
-                            উত্তর: কোনো একটি নির্দিষ্ট স্থানে জীবের বেঁচে থাকার জন্য প্রয়োজনীয় সকল উপাদান যেমন- খাদ্য, পানি ও আশ্রয় থাকলে তাকে ওই জীবের আবাসস্থল বলে।
-                        </div>
-                        <div class="qa-box">
-                            <strong>(খ) স্বাদুপানির পরিবেশে কী কী উদ্ভিদ থাকে?</strong>
-                            উত্তর: স্বাদুপানির পরিবেশে শাপলা, কচুরিপানা এবং বিভিন্ন ধরনের শেওলা বা জলজ উদ্ভিদ থাকে।
-                        </div>
-
-                        <!-- ৪. বর্ণনামূলক উত্তর -->
-                        <div class="section-header">৪. বর্ণনামূলক উত্তর প্রশ্ন</div>
-                        <div class="qa-box">
-                            <strong>(ক) মরুভূমির প্রাণীদের বৈশিষ্ট্য বর্ণনা করো।</strong>
-                            উত্তর: মরুভূমির প্রাণীরা দীর্ঘ সময় পানি ছাড়া থাকতে পারে। যেমন— উট তাদের কুঁজে চর্বি জমিয়ে রাখে যা প্রয়োজনে খাদ্য ও পানি সরবরাহ করে। এদের চামড়া পুরু হয় যা পানি দ্রুত শুকাতে দেয় না।
-                        </div>
-                        <div class="qa-box">
-                            <strong>(খ) জলজ উদ্ভিদের অভিযোজন কীভাবে ঘটে?</strong>
-                            উত্তর: জলজ উদ্ভিদের কাণ্ড ও পাতায় বিশেষ বায়ুকুঠুরি থাকে যা তাদের পানিতে ভেসে থাকতে সাহায্য করে। এদের কাণ্ড সাধারণত নরম ও নমনীয় হয় যা স্রোতের সাথে মানিয়ে নিতে পারে।
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- অন্যান্য অধ্যায় -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ২</div>
-                    <div class="chapter-title">পরিবেশ দূষণ</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-            </div>
-
+        <!-- Example from Class 5 English_7.jpg -->
+        <div class="audio-row" onclick="playSnippet('rina_intro')">
+            <span class="play-icon">🔊</span>
+            <span>Rina: Hello! My name is Rina. Are you new here?</span>
         </div>
-    </main>
 
-    <footer>
-        <p>© ২০২৬ ডিজিটাল শিক্ষা অ্যাপ | ৫ম শ্রেণি বিজ্ঞান</p>
-    </footer>
+        <!-- Example from Class 5 English_9.jpg (Syllable Focus) -->
+        <div class="audio-row" onclick="playSnippet('en_joy')">
+            <span class="play-icon">🎯</span>
+            <span>Practice Syllable: en-<span class="stress">JOY</span></span>
+        </div>
+    </div>
+</div>
 
-    <script>
-        // Accordion Toggle
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                item.classList.toggle('active');
-            });
-        });
+<!-- Hidden audio element pointing to your Render server -->
+<audio id="masterAudio" src="https://your-render-app.onrender.com/audio/unit1.mp3"></audio>
 
-        // Show Habitat Info
-        function showInfo(id) {
-            document.querySelectorAll('.detail-view').forEach(v => v.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
-        }
+<script>
+    const audio = document.getElementById('masterAudio');
+    
+    // Map of labels to [start_time, end_time] in seconds
+    const timestamps = {
+        'rina_intro': [5.2, 8.5],
+        'en_joy': [12.0, 13.5]
+    };
 
-        // Quiz Check
-        function checkAnswer(btn, isCorrect) {
-            if(isCorrect) {
-                btn.classList.add('correct');
-                setTimeout(() => alert('চমৎকার! সঠিক উত্তর হয়েছে। 🎉'), 100);
-            } else {
-                btn.classList.add('wrong');
-                setTimeout(() => alert('দুঃখিত, উত্তরটি ভুল। আবার চেষ্টা করো।'), 100);
+    function playSnippet(id) {
+        const [start, end] = timestamps[id];
+        audio.currentTime = start;
+        audio.play();
+
+        // Stop playing when the snippet ends
+        const checkEnd = setInterval(() => {
+            if (audio.currentTime >= end) {
+                audio.pause();
+                clearInterval(checkEnd);
             }
-        }
-    </script>
+        }, 100);
+    }
+</script>
+
 </body>
 </html>
