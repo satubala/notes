@@ -3,127 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 5 English - Interactive Lesson</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>বিজ্ঞান পাঠ্যসূচী - ৫ম শ্রেণি</title>
+    
+    <!-- Embedding SolaimanLipi from a reliable CDN -->
+    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet">
+
     <style>
-        .unit-gradient { background: linear-gradient(135deg, #1e7d4d 0%, #4ade80 100%); }
-        .section-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; }
-        .section-card:hover { transform: translateY(-5px); shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .interactive-btn { cursor: pointer; border-bottom: 2px dashed #059669; }
-        .stress-text { font-weight: 800; color: #b45309; }
+        /* CSS STYLES */
+        :root {
+            --primary-bg: #c7d5e8; /* Matches the blue shade in Class 5 Science_6.jpg */
+            --hover-bg: #b0c4de;
+            --text-color: #1a2a3a;
+            --border-color: #000000;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid var(--border-color);
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-header {
+            background-color: var(--primary-bg);
+            padding: 12px 15px;
+            display: flex;
+            cursor: pointer;
+            transition: 0.2s;
+            align-items: center;
+        }
+
+        .accordion-header:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .chapter-num {
+            width: 80px;
+            font-weight: bold;
+            border-right: 1px solid var(--border-color);
+            margin-right: 15px;
+        }
+
+        .chapter-title {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        /* Content Area */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #ffffff;
+        }
+
+        .content-inner {
+            padding: 15px;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Active State Logic */
+        .accordion-item.active .accordion-content {
+            max-height: 300px; /* Adjust based on content length */
+        }
+
+        .accordion-item.active .icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-item.active .accordion-header {
+            background-color: #cbdcf0;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-    <!-- Header Section (Reference: Class 5 English_7.jpg) -->
-    <header class="unit-gradient text-white p-10 rounded-b-[50px] shadow-xl mb-8">
-        <div class="max-w-5xl mx-auto flex justify-between items-end">
-            <div>
-                <h1 class="text-6xl font-black">Unit 1</h1>
-                <p class="text-2xl opacity-90 mt-2 font-medium">English for Today</p>
-            </div>
-            <div class="text-right">
-                <h2 class="text-4xl font-bold italic border-b-4 border-white pb-2">At the Library</h2>
-            </div>
+<div class="container" id="chapterList">
+    <!-- Items are based on the table in Class 5 Science_6.jpg -->
+    
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-num">অধ্যায় ১</div>
+            <div class="chapter-title">জীবের আবাসস্থল</div>
+            <div class="icon">+</div>
         </div>
-    </header>
+        <div class="accordion-content">
+            <div class="content-inner">এখানে এই অধ্যায়ের বিস্তারিত আলোচনা, নোটস এবং প্রশ্ন উত্তর থাকবে।</div>
+        </div>
+    </div>
 
-    <main class="max-w-5xl mx-auto px-6 space-y-12 pb-20">
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-num">অধ্যায় ২</div>
+            <div class="chapter-title">জীব ও পরিবেশের পারস্পরিক নির্ভরশীলতা</div>
+            <div class="icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="content-inner">পরিবেশের উপাদানসমূহের একে অপরের ওপর নির্ভরতা নিয়ে বিস্তারিত তথ্য।</div>
+        </div>
+    </div>
 
-        <!-- ১.২ রিড অ্যান্ড অ্যাক্ট আউট (Reference: Class 5 English_7.jpg, 8.jpg) -->
-        <section class="section-card bg-white p-8 rounded-3xl">
-            <h3 class="text-2xl font-bold text-green-700 mb-6 flex items-center">
-                <span class="mr-2">📖</span> 1.2 Read and act out
-            </h3>
-            <div class="space-y-4 text-lg leading-relaxed bg-green-50 p-6 rounded-2xl border border-green-100">
-                <p onclick="speak('Rina and Omar are in the public library.')" class="interactive-btn inline-block">Rina and Omar are in the public library. They have come to the library to read books.</p>
-                
-                <div class="mt-6 space-y-3">
-                    <p><strong>Rina:</strong> <span onclick="speak('Hello! My name is Rina. Are you new here?')" class="interactive-btn">"Hello! My name is Rina. Are you new here?"</span></p>
-                    <p><strong>Rupa:</strong> <span onclick="speak('Hi! I am Rupa. My family has just moved to this neighbourhood.')" class="interactive-btn">"Hi! I'm Rupa. My family has just moved to this neighbourhood."</span></p>
-                    <p><strong>Omar:</strong> <span onclick="speak('I enjoy reading biographies of famous people.')" class="interactive-btn">"I enjoy reading biographies of famous people."</span></p>
-                    <p><strong>Rina:</strong> <span onclick="speak('Sure! I find science fiction very interesting.')" class="interactive-btn">"Sure! I find science fiction very interesting."</span></p>
-                </div>
-            </div>
-        </section>
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-num">অধ্যায় ৩</div>
+            <div class="chapter-title">খাদ্য</div>
+            <div class="icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="content-inner">পুষ্টি, সুষম খাদ্য এবং খাদ্য সংরক্ষণের উপায়।</div>
+        </div>
+    </div>
 
-        <!-- ৩.১ ল্যাঙ্গুয়েজ ফোকাস: সিলেবল (Reference: Class 5 English_9.jpg) -->
-        <section class="section-card bg-amber-50 p-8 rounded-3xl border-2 border-amber-200">
-            <h3 class="text-2xl font-bold text-amber-900 mb-4 text-center">3.1 Language Focus: Stressed Syllables</h3>
-            <p class="text-center mb-8 italic">Clap your hands when you say the stressed syllables!</p>
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-num">অধ্যায় ৪</div>
+            <div class="chapter-title">বয়ঃসন্ধিকাল</div>
+            <div class="icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="content-inner">শারীরিক ও মানসিক পরিবর্তন এবং এই সময়ে করণীয়।</div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <div class="chapter-num" style="border-right: none;">শব্দকোষ</div>
+            <div class="chapter-title"></div>
+            <div class="icon">+</div>
+        </div>
+        <div class="accordion-content">
+            <div class="content-inner">বইয়ের গুরুত্বপূর্ণ শব্দের অর্থসমূহ।</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JAVASCRIPT LOGIC
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const currentItem = header.parentElement;
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
-                    <span class="stress-text uppercase">APP</span>-le
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
-                    TEA-<span class="stress-text uppercase">cher</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
-                    to-<span class="stress-text uppercase">MORR</span>-ow
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm cursor-pointer" onclick="alert('👏 Clap!')">
-                    bi-o-<span class="stress-text uppercase">GRAPH</span>-ies
-                </div>
-            </div>
-        </section>
+            // Toggle active class
+            const isActive = currentItem.classList.contains('active');
+            
+            // Close all items first (Accordian effect)
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+            });
 
-        <!-- ৩.২ স্ট্রেসড ওয়ার্ডস (Reference: Class 5 English_10.jpg) -->
-        <section class="section-card bg-white p-8 rounded-3xl border border-blue-100 shadow-sm">
-            <h3 class="text-2xl font-bold text-blue-800 mb-6 underline">3.2 Language Focus: Stressed Words</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <tr class="bg-blue-600 text-white">
-                        <th class="p-4 rounded-tl-xl">Sentence</th>
-                        <th class="p-4 rounded-tr-xl">Why we stress the bold word...</th>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="p-4">I love to read <strong>storybooks</strong>.</td>
-                        <td class="p-4">Tells what kind of books</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="p-4">She has a <strong>red</strong> bicycle.</td>
-                        <td class="p-4">Tells the color of the object</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+            // If it wasn't active, open it
+            if (!isActive) {
+                currentItem.classList.add('active');
+            }
+        });
+    });
+</script>
 
-        <!-- ৩.২.২ গলার স্বর ওঠা-নামা (Reference: Class 5 English_11.jpg, 12.jpg) -->
-        <section class="section-card bg-indigo-50 p-8 rounded-3xl">
-            <h3 class="text-2xl font-bold text-indigo-900 mb-6">3.2.2 Voices Going Up (⤴) and Down (⤵)</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-2xl border-l-8 border-green-500">
-                    <p class="font-bold text-green-700 mb-4">Voice goes UP (⤴) for:</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Greetings (Hello!)</li>
-                        <li>Yes/No questions (Are you new here?)</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border-l-8 border-red-500">
-                    <p class="font-bold text-red-700 mb-4">Voice goes DOWN (⤵) for:</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Statements (My name is Rina.)</li>
-                        <li>Wh-questions (How are you?)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="text-center p-12 bg-gray-900 text-gray-400">
-        <p class="text-lg">Class 5 English • Unit 1 Digital Version</p>
-        <p class="mt-2 text-sm">Interactive Web Content Creator - 2026</p>
-    </footer>
-
-    <script>
-        function speak(text) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            utterance.rate = 0.8;
-            window.speechSynthesis.speak(utterance);
-        }
-    </script>
 </body>
 </html>
