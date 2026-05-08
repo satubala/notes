@@ -5,207 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Science App - Class 5</title>
     
-    <!-- SolaimanLipi Font Embed -->
+    <!-- SolaimanLipi Font -->
     <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet">
 
     <style>
         :root {
-            --app-primary: #1e3a8a; 
-            --row-bg: #c7d5e8;      
-            --row-hover: #b3c7e1;
+            --primary: #1e3a8a; 
+            --secondary: #c7d5e8;      
             --accent: #3b82f6;
-            --text-main: #1f2937;
-            --border-color: #000000;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --bg: #f3f4f6;
+            --text: #1f2937;
         }
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             font-family: 'SolaimanLipi', Arial, sans-serif;
-            background-color: #f3f4f6;
+            background-color: var(--bg);
             margin: 0;
             padding-top: 60px; 
-            color: var(--text-main);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        /* WEB APP HEADER */
+        /* App Header */
         .app-header {
             position: fixed; top: 0; left: 0; right: 0; height: 60px;
-            background-color: var(--app-primary); color: white;
+            background-color: var(--primary); color: white;
             display: flex; align-items: center; padding: 0 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;
         }
 
-        .app-header h1 { font-size: 1.2rem; margin: 0; flex-grow: 1; }
+        .app-header h1 { font-size: 1.2rem; margin: 0; }
 
-        /* MAIN CONTENT AREA */
+        /* Main Container */
         .app-container { max-width: 600px; margin: 20px auto; padding: 0 10px; }
 
         .app-card {
-            background: white; border: 2px solid var(--border-color);
-            border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: white; border: 1px solid #ddd;
+            border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
-        /* ACCORDION ITEMS */
-        .accordion-item { border-bottom: 1px solid #000; }
+        /* Accordion Header */
+        .accordion-item { border-bottom: 1px solid #eee; }
         .accordion-header {
-            background-color: var(--row-bg); display: flex;
-            cursor: pointer; transition: background 0.2s; min-height: 55px;
+            background-color: var(--secondary); display: flex;
+            cursor: pointer; min-height: 60px; align-items: center;
         }
 
         .chapter-badge {
-            width: 85px; background: rgba(0,0,0,0.05); font-weight: bold;
-            display: flex; align-items: center; justify-content: center;
-            border-right: 1px solid var(--border-color); font-size: 0.9rem;
+            width: 80px; font-weight: bold; text-align: center;
+            border-right: 1px solid rgba(0,0,0,0.1); font-size: 0.9rem;
         }
 
-        .chapter-title {
-            padding: 12px 15px; flex-grow: 1; display: flex;
-            align-items: center; font-size: 1.05rem; font-weight: 500;
-        }
+        .chapter-title { padding: 0 15px; flex-grow: 1; font-weight: 600; }
 
-        .arrow-icon { padding: 0 15px; display: flex; align-items: center; transition: transform 0.3s; }
+        .arrow-icon { padding: 0 15px; transition: transform 0.3s; }
 
-        /* CONTENT REVEAL */
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background-color: #ffffff; }
-        .inner-padding { padding: 20px; border-top: 1px solid #eee; }
-
-        /* ACTIVE STATES */
-        .accordion-item.active .accordion-content { max-height: 3000px; } /* Increased for content */
+        /* Content Area */
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; background: #fff; }
+        .inner-padding { padding: 20px; }
+        .accordion-item.active .accordion-content { max-height: 5000px; }
         .accordion-item.active .arrow-icon { transform: rotate(180deg); }
 
-        /* HABITAT GRID */
+        /* Habitat Section */
         .habitat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
         .habitat-box { 
-            background: #f1f5f9; padding: 12px; border-radius: 8px; text-align: center; 
-            cursor: pointer; border: 1px solid #cbd5e1; font-weight: bold; transition: 0.2s;
+            background: #f8fafc; padding: 15px; border-radius: 8px; text-align: center; 
+            cursor: pointer; border: 1px solid #cbd5e1; font-weight: bold;
         }
-        .habitat-box:active { background: var(--row-bg); }
         .detail-view { 
-            display: none; background: #fefce8; border: 1.5px solid var(--accent); 
-            padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; 
+            display: none; background: #fffbeb; border: 1px solid #fcd34d; 
+            padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem; 
         }
 
-        /* TABLE STYLES */
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; background: #fff; }
-        th, td { border: 1px solid #000; padding: 10px; text-align: left; font-size: 0.9rem; }
-        th { background-color: #e2e8f0; }
+        /* Table */
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background: #f1f5f9; }
 
-        /* QUIZ STYLES */
-        .section-header { background: #1e3a8a; color: white; padding: 8px 12px; border-radius: 4px; margin: 20px 0 10px 0; }
-        .quiz-item { margin-bottom: 20px; padding: 10px; background: #f9fafb; border-radius: 8px; }
+        /* Exercise Styles */
+        .section-header { 
+            background: var(--primary); color: white; padding: 10px 15px; 
+            border-radius: 6px; margin: 25px 0 15px 0; font-size: 1rem;
+        }
+        
+        .quiz-item { margin-bottom: 20px; background: #f9fafb; padding: 15px; border-radius: 10px; }
         .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        
         .opt-btn { 
-            padding: 10px; border: 1px solid #ddd; border-radius: 8px; 
-            background: white; cursor: pointer; font-family: 'SolaimanLipi'; transition: 0.3s;
+            padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; 
+            background: white; cursor: pointer; font-family: inherit; font-size: 0.9rem;
         }
-        .correct { background-color: #4ade80 !important; color: white; border-color: #22c55e; }
-        .wrong { background-color: #f87171 !important; color: white; border-color: #dc2626; }
-        .fill-gap { padding: 15px; background: #fffbeb; border-radius: 8px; border: 1px solid #fde68a; }
-        .ans-trigger { color: #d97706; font-weight: bold; cursor: pointer; border-bottom: 2px dashed #d97706; padding: 0 5px; }
+        .correct { background-color: var(--success) !important; color: white; border-color: #15803d; }
+        .wrong { background-color: var(--danger) !important; color: white; border-color: #b91c1c; }
 
-        .app-footer { text-align: center; padding: 30px 10px; color: #9ca3af; font-size: 0.8rem; }
+        .fill-gap-box { background: #f0fdf4; padding: 15px; border-radius: 10px; border: 1px solid #bbf7d0; }
+        .ans-trigger { 
+            color: #166534; font-weight: bold; cursor: pointer; 
+            border-bottom: 2px dashed #166534; padding: 0 4px; 
+        }
+
+        .qa-box { background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 15px; }
+        .qa-box strong { color: var(--primary); display: block; margin-bottom: 5px; }
+
+        footer { text-align: center; padding: 40px 0; color: #6b7280; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
     <header class="app-header">
-        <h1>🔬 ৫ম শ্রেণি: বিজ্ঞান</h1>
+        <h1>🔬 ৫ম শ্রেণি বিজ্ঞান: ডিজিটাল গাইড</h1>
     </header>
 
     <main class="app-container">
         <div class="app-card">
             
-            <!-- Chapter 1 -->
-            <div class="accordion-item active"> <!-- Default Open for Chapter 1 -->
+            <!-- অধ্যায় ১ -->
+            <div class="accordion-item active">
                 <div class="accordion-header">
                     <div class="chapter-badge">অধ্যায় ১</div>
                     <div class="chapter-title">জীবের আবাসস্থল</div>
                     <div class="arrow-icon">▼</div>
                 </div>
+                
                 <div class="accordion-content">
                     <div class="inner-padding">
-                        <p>উদ্ভিদ এবং প্রাণীসহ আরও অনেক বিচিত্র রকমের জীব নিয়ে জীবজগৎ গঠিত। যেখানে কোনো জীব স্বচ্ছন্দে বসবাস করতে পারে সেটাই জীবের আবাসস্থল।</p>
+                        <p><strong>মূল আলোচনা:</strong> কোনো নির্দিষ্ট স্থানে জীবের বেঁচে থাকার জন্য প্রয়োজনীয় সকল উপাদান উপস্থিত থাকলে তাকে ওই জীবের আবাসস্থল বলে।</p>
                         
-                        <h4 style="color:var(--app-primary)">১. বিভিন্ন ধরনের আবাসস্থল:</h4>
+                        <!-- আবাসস্থল সেকশন -->
                         <div class="habitat-grid">
-                            <div class="habitat-box" onclick="showInfo('forest')">🌲 বনজ</div>
-                            <div class="habitat-box" onclick="showInfo('desert')">🌵 মরুভূমি</div>
-                            <div class="habitat-box" onclick="showInfo('water')">🌊 জলজ</div>
-                            <div class="habitat-box" onclick="showInfo('polar')">❄️ মেরু অঞ্চল</div>
+                            <div class="habitat-box" onclick="showInfo('h1')">🌲 বনজ</div>
+                            <div class="habitat-box" onclick="showInfo('h2')">🌵 মরুভূমি</div>
+                            <div class="habitat-box" onclick="showInfo('h3')">🌊 জলজ</div>
+                            <div class="habitat-box" onclick="showInfo('h4')">❄️ মেরু</div>
                         </div>
 
-                        <div id="forest" class="detail-view"><strong>বনজ:</strong> প্রাকৃতিক ভাবে প্রচুর উদ্ভিদ জন্মানো স্থান। যেমন— সুন্দরবন। এখানে বাঘ, হরিণ বাস করে।</div>
-                        <div id="desert" class="detail-view"><strong>মরুভূমি:</strong> অত্যন্ত শুষ্ক অঞ্চল। এখানে উট ও ক্যাকটাস দেখা যায়।</div>
-                        <div id="water" class="detail-view"><strong>জলজ:</strong> সমুদ্র, নদী বা পুকুর। এখানে মাছ ও শাপলা থাকে।</div>
-                        <div id="polar" class="detail-view"><strong>মেরু অঞ্চল:</strong> বরফে ঢাকা অঞ্চল। এখানে শ্বেত ভাল্লুক ও সিল বাস করে।</div>
+                        <div id="h1" class="detail-view"><strong>বনজ:</strong> এখানে প্রচুর গাছপালা থাকে। উদাহরণ: সুন্দরবন। রয়েল বেঙ্গল টাইগার ও হরিণ এখানে বাস করে।</div>
+                        <div id="h2" class="detail-view"><strong>মরুভূমি:</strong> শুষ্ক ও বালুকাময় স্থান। উট ও ক্যাকটাস এখানকার প্রধান জীব।</div>
+                        <div id="h3" class="detail-view"><strong>জলজ:</strong> পুকুর, নদী ও সমুদ্র। মাছ, কচুরিপানা ও শাপলা এখানে বাস করে।</div>
+                        <div id="h4" class="detail-view"><strong>মেরু অঞ্চল:</strong> সারা বছর বরফে ঢাকা থাকে। পেঙ্গুইন ও শ্বেত ভাল্লুক এখানে দেখা যায়।</div>
 
-                        <h4 style="color:var(--app-primary)">২. অভিযোজন (Adaptation):</h4>
-                        <p>নির্দিষ্ট বাসস্থানে টিকে থাকার জন্য জীবের বৈশিষ্ট্যগত পরিবর্তনকে অভিযোজন বলে।</p>
-                        
-                        <table>
-                            <tr><th>জীব</th><th>বৈশিষ্ট্য</th></tr>
-                            <tr><td>সুন্দরী গাছ</td><td>শ্বাসমূলের মাধ্যমে অক্সিজেন নেয়।</td></tr>
-                            <tr><td>কচুরিপানা</td><td>কাণ্ডে বায়ুকুঠুরি থাকে যা ভাসতে সাহায্য করে।</td></tr>
-                        </table>
-
-                        <!-- অনুশীলনী (Class 5 Science_16_2.jpg থেকে) -->
-                        <div class="section-header">📚 অনুশীলনী কুইজ</div>
-                        
+                        <!-- ১. সঠিক উত্তর -->
+                        <div class="section-header">১. সঠিক উত্তরের টিক চিহ্ন দাও</div>
                         <div class="quiz-item">
-                            <p><strong>১. জলজ উদ্ভিদের অনন্য বৈশিষ্ট্য কোনটি?</strong></p>
+                            <p><strong>(ক) জলজ উদ্ভিদের অনন্য বৈশিষ্ট্য কোনটি?</strong></p>
                             <div class="quiz-options">
                                 <button class="opt-btn" onclick="checkAnswer(this, false)">পাতা পুরু</button>
                                 <button class="opt-btn" onclick="checkAnswer(this, true)">বায়ুকুঠুরি</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">ফুল</button>
                                 <button class="opt-btn" onclick="checkAnswer(this, false)">কাঁটায়ুক্ত</button>
+                                <button class="opt-btn" onclick="checkAnswer(this, false)">ফুল</button>
                             </div>
                         </div>
-
                         <div class="quiz-item">
-                            <p><strong>২. মাংসাশী প্রাণীর প্রধান বৈশিষ্ট্য কোনটি?</strong></p>
+                            <p><strong>(খ) মাংসাশী প্রাণীর প্রধান বৈশিষ্ট্য কোনটি?</strong></p>
                             <div class="quiz-options">
                                 <button class="opt-btn" onclick="checkAnswer(this, false)">দ্রুত গতি</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">বড় আকৃতি</button>
                                 <button class="opt-btn" onclick="checkAnswer(this, true)">তীক্ষ্ণ দাঁত</button>
                                 <button class="opt-btn" onclick="checkAnswer(this, false)">চর্বির স্তর</button>
+                                <button class="opt-btn" onclick="checkAnswer(this, false)">রঙ পরিবর্তন</button>
                             </div>
                         </div>
 
-                        <div class="quiz-item">
-                            <p><strong>৩. শ্বাসমূল কোন উদ্ভিদে পাওয়া যায়?</strong></p>
-                            <div class="quiz-options">
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">হিজল</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, true)">সুন্দরী</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">পাকুড়</button>
-                                <button class="opt-btn" onclick="checkAnswer(this, false)">কচুরিপানা</button>
-                            </div>
+                        <!-- ২. শূন্যস্থান পূরণ -->
+                        <div class="section-header">২. শূন্যস্থান পূরণ করো</div>
+                        <div class="fill-gap-box">
+                            <p>১. জলজ উদ্ভিদকে পানিতে ভেসে থাকতে সাহায্য করে <span class="ans-trigger" onclick="this.innerText='বায়ুকুঠুরি'">.........</span>।</p>
+                            <p>২. তীব্র ঠান্ডায় মেরু অঞ্চলের প্রাণীর দেহ গরম রাখে <span class="ans-trigger" onclick="this.innerText='চর্বিস্তর'">.........</span>।</p>
+                            <p>৩. ছায়াযুক্ত স্যাঁতসেঁতে স্থানে জন্মানো একটি উদ্ভিদ হলো <span class="ans-trigger" onclick="this.innerText='ফার্ন'">.........</span>।</p>
                         </div>
 
-                        <div style="background: #fef3c7; padding: 10px; border-radius: 8px;">
-                            <p><strong>২. শূন্যস্থান পূরণ (ক্লিক করে উত্তর দেখ):</strong></p>
-                            <p>ক) জলজ উদ্ভিদকে ভাসতে সাহায্য করে <span class="ans-trigger" onclick="this.innerText='বায়ুকুঠুরি'">..........</span>।</p>
-                            <p>খ) তীব্র ঠান্ডায় দেহ গরম রাখে <span class="ans-trigger" onclick="this.innerText='চর্বিস্তর'">..........</span>।</p>
+                        <!-- ৩. সংক্ষিপ্ত উত্তর -->
+                        <div class="section-header">৩. সংক্ষিপ্ত উত্তর প্রশ্ন</div>
+                        <div class="qa-box">
+                            <strong>(ক) জীবের আবাসস্থল বলতে কী বুঝায়?</strong>
+                            উত্তর: কোনো একটি নির্দিষ্ট স্থানে জীবের বেঁচে থাকার জন্য প্রয়োজনীয় সকল উপাদান যেমন- খাদ্য, পানি ও আশ্রয় থাকলে তাকে ওই জীবের আবাসস্থল বলে।
+                        </div>
+                        <div class="qa-box">
+                            <strong>(খ) স্বাদুপানির পরিবেশে কী কী উদ্ভিদ থাকে?</strong>
+                            উত্তর: স্বাদুপানির পরিবেশে শাপলা, কচুরিপানা এবং বিভিন্ন ধরনের শেওলা বা জলজ উদ্ভিদ থাকে।
+                        </div>
+
+                        <!-- ৪. বর্ণনামূলক উত্তর -->
+                        <div class="section-header">৪. বর্ণনামূলক উত্তর প্রশ্ন</div>
+                        <div class="qa-box">
+                            <strong>(ক) মরুভূমির প্রাণীদের বৈশিষ্ট্য বর্ণনা করো।</strong>
+                            উত্তর: মরুভূমির প্রাণীরা দীর্ঘ সময় পানি ছাড়া থাকতে পারে। যেমন— উট তাদের কুঁজে চর্বি জমিয়ে রাখে যা প্রয়োজনে খাদ্য ও পানি সরবরাহ করে। এদের চামড়া পুরু হয় যা পানি দ্রুত শুকাতে দেয় না।
+                        </div>
+                        <div class="qa-box">
+                            <strong>(খ) জলজ উদ্ভিদের অভিযোজন কীভাবে ঘটে?</strong>
+                            উত্তর: জলজ উদ্ভিদের কাণ্ড ও পাতায় বিশেষ বায়ুকুঠুরি থাকে যা তাদের পানিতে ভেসে থাকতে সাহায্য করে। এদের কাণ্ড সাধারণত নরম ও নমনীয় হয় যা স্রোতের সাথে মানিয়ে নিতে পারে।
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Chapter 2-13 placeholders -->
-            <div class="accordion-item"><div class="accordion-header"><div class="chapter-badge">অধ্যায় ২</div><div class="chapter-title">জীব ও পরিবেশের পারস্পরিক নির্ভরশীলতা</div><div class="arrow-icon">▼</div></div></div>
-            <div class="accordion-item"><div class="accordion-header"><div class="chapter-badge">অধ্যায় ৩</div><div class="chapter-title">খাদ্য</div><div class="arrow-icon">▼</div></div></div>
-            <div class="accordion-item"><div class="accordion-header"><div class="chapter-badge">অধ্যায় ৪</div><div class="chapter-title">বয়ঃসন্ধিকাল</div><div class="arrow-icon">▼</div></div></div>
+            <!-- অন্যান্য অধ্যায় -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="chapter-badge">অধ্যায় ২</div>
+                    <div class="chapter-title">পরিবেশ দূষণ</div>
+                    <div class="arrow-icon">▼</div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <footer class="app-footer">© ২০২৬ প্রাথমিক বিজ্ঞান শিক্ষা পোর্টাল</footer>
+    <footer>
+        <p>© ২০২৬ ডিজিটাল শিক্ষা অ্যাপ | ৫ম শ্রেণি বিজ্ঞান</p>
+    </footer>
 
     <script>
-        // Accordion Logic
+        // Accordion Toggle
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
@@ -213,20 +227,20 @@
             });
         });
 
-        // Habitat Info Logic
+        // Show Habitat Info
         function showInfo(id) {
-            document.querySelectorAll('.detail-view').forEach(view => view.style.display = 'none');
+            document.querySelectorAll('.detail-view').forEach(v => v.style.display = 'none');
             document.getElementById(id).style.display = 'block';
         }
 
-        // Quiz Logic
+        // Quiz Check
         function checkAnswer(btn, isCorrect) {
             if(isCorrect) {
                 btn.classList.add('correct');
-                alert("সঠিক উত্তর! 🎉");
+                setTimeout(() => alert('চমৎকার! সঠিক উত্তর হয়েছে। 🎉'), 100);
             } else {
                 btn.classList.add('wrong');
-                alert("ভুল উত্তর, আবার চেষ্টা করো।");
+                setTimeout(() => alert('দুঃখিত, উত্তরটি ভুল। আবার চেষ্টা করো।'), 100);
             }
         }
     </script>
