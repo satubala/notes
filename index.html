@@ -3,377 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Science App - Class 5</title>
+    <title>অধ্যায় ১: জীবের আবাসস্থল</title>
     
-    <!-- SolaimanLipi Font Embed -->
     <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet">
 
     <style>
         :root {
-            --app-primary: #1e3a8a; /* Deep blue app bar */
-            --row-bg: #c7d5e8;      /* Matches Class 5 Science_6.jpg */
-            --row-hover: #b3c7e1;
-            --accent: #3b82f6;
-            --text-main: #1f2937;
-            --border-color: #000000;
+            --app-blue: #1e3a8a;
+            --section-bg: #eef2f7;
+            --header-bg: #c7d5e8;
+            --accent-blue: #3b82f6;
+            --text-dark: #1f2937;
         }
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             font-family: 'SolaimanLipi', Arial, sans-serif;
             background-color: #f3f4f6;
             margin: 0;
-            padding-top: 60px; /* Space for sticky header */
-            color: var(--text-main);
-        }
-
-        /* WEB APP HEADER */
-        .app-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background-color: var(--app-primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .app-header h1 {
-            font-size: 1.2rem;
-            margin: 0;
-            flex-grow: 1;
-        }
-
-        .header-image {
-            height: 40px;
-            width: 40px;
-            background: white;
-            border-radius: 8px;
-            margin-right: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        /* MAIN CONTENT AREA */
-        .app-container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 0 10px;
-        }
-
-        .app-card {
-            background: white;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ACCORDION ITEMS */
-        .accordion-item {
-            border-bottom: 1px solid #000;
-        }
-
-        .accordion-item:last-child {
-            border-bottom: none;
-        }
-
-        .accordion-header {
-            background-color: var(--row-bg);
-            display: flex;
-            cursor: pointer;
-            transition: background 0.2s;
-            min-height: 55px;
-        }
-
-        .accordion-header:active {
-            background-color: var(--row-hover);
-        }
-
-        .chapter-badge {
-            width: 85px;
-            background: rgba(0,0,0,0.05);
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-right: 1px solid var(--border-color);
-            font-size: 0.9rem;
-        }
-
-        .chapter-title {
-            padding: 12px 15px;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-
-        .arrow-icon {
-            padding: 0 15px;
-            display: flex;
-            align-items: center;
-            transition: transform 0.3s;
-        }
-
-        /* CONTENT REVEAL */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: #ffffff;
-        }
-
-        .inner-padding {
-            padding: 20px;
-            border-top: 1px solid #eee;
+            padding-top: 60px;
+            color: var(--text-dark);
             line-height: 1.6;
-            color: #4b5563;
         }
 
-        /* ACTIVE STATES */
-        .accordion-item.active .accordion-content {
-            max-height: 400px; 
+        /* App Bar */
+        .app-bar {
+            position: fixed; top: 0; left: 0; right: 0; height: 60px;
+            background-color: var(--app-blue); color: white;
+            display: flex; align-items: center; padding: 0 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1000;
         }
 
-        .accordion-item.active .arrow-icon {
-            transform: rotate(180deg);
+        .back-btn { font-size: 20px; margin-right: 15px; cursor: pointer; }
+
+        /* Content Container */
+        .content-body {
+            max-width: 700px; margin: 20px auto; padding: 0 15px;
         }
 
-        .accordion-item.active .accordion-header {
-            background-color: #dee7f2;
+        .chapter-card {
+            background: white; border-radius: 15px; padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px;
         }
 
-        /* FOOTER FOR APP FEEL */
-        .app-footer {
-            text-align: center;
-            padding: 30px 10px;
-            color: #9ca3af;
-            font-size: 0.8rem;
+        h1 { color: var(--accent-blue); text-align: center; font-size: 1.8rem; margin-top: 0; }
+        
+        .intro-text { font-size: 1.1rem; border-left: 4px solid var(--accent-blue); padding-left: 15px; margin: 20px 0; }
+
+        /* Section Headings */
+        .section-header {
+            background: var(--header-bg); padding: 10px 15px;
+            border-radius: 8px; font-weight: bold; margin: 25px 0 15px 0;
+            display: flex; align-items: center;
         }
+
+        /* Interactive Habitats */
+        .habitat-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;
+        }
+
+        .habitat-box {
+            background: var(--section-bg); padding: 15px; border-radius: 10px;
+            text-align: center; cursor: pointer; transition: 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .habitat-box:hover { background: var(--header-bg); transform: translateY(-3px); }
+
+        /* Detailed Info View */
+        .detail-view {
+            display: none; background: #fff; border: 1px solid var(--accent-blue);
+            padding: 15px; border-radius: 10px; margin-top: 10px;
+        }
+
+        /* Observation Table */
+        table {
+            width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff;
+        }
+
+        th, td {
+            border: 1px solid #000; padding: 10px; text-align: left; font-size: 0.9rem;
+        }
+
+        th { background-color: var(--header-bg); }
+
+        .question-box {
+            background: #dbeafe; padding: 15px; border-radius: 8px;
+            border-left: 5px solid #2563eb; margin: 20px 0;
+        }
+
+        .img-placeholder {
+            width: 100%; height: 200px; background: #e5e7eb;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 10px; margin-bottom: 15px; color: #666;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- App Header with Image/Icon Placeholder -->
-    <header class="app-header">
-        <div class="header-image">🔬</div>
-        <h1>প্রাথমিক বিজ্ঞান অ্যাপ</h1>
+    <header class="app-bar">
+        <div class="back-btn">←</div>
+        <div>প্রাথমিক বিজ্ঞান - ৫ম শ্রেণি</div>
     </header>
 
-    <main class="app-container">
-        <div class="app-card">
+    <main class="content-body">
+        <div class="chapter-card">
+            <span style="background: #3b82f6; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">অধ্যায় ১</span>
+            <h1>জীবের আবাসস্থল</h1>
             
-            <!-- Chapter 1 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ১</div>
-                    <div class="chapter-title">জীবের আবাসস্থল</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">
-                        এই অধ্যায়ে আমরা জীবজন্তুর বেঁচে থাকার জন্য পরিবেশের গুরুত্ব এবং তাদের বিভিন্ন ধরণের আবাসস্থল সম্পর্কে বিস্তারিত শিখব।
-                    </div>
-                </div>
+            <div class="img-placeholder">আবাসস্থলের ছবি (গাছে পাখির বাসা ও কাঠবিড়ালি)</div>
+
+            <p class="intro-text">
+                উদ্ভিদ এবং প্রাণীসহ আরও অনেক বিচিত্র রকমের জীব নিয়ে জীবজগৎ গঠিত। যেখানে কোনো জীব স্বচ্ছন্দে বসবাস করতে পারে সেটাই জীবের আবাসস্থল।
+            </p>
+
+            <div class="question-box">
+                <strong>? জীবের আবাসস্থলগুলো কী কী?</strong>
             </div>
 
-            <!-- Chapter 2 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ২</div>
-                    <div class="chapter-title">জীব ও পরিবেশের পারস্পরিক নির্ভরশীলতা</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">উদ্ভিদ ও প্রাণী কীভাবে একে অপরের ওপর নির্ভর করে তা এখানে আলোচনা করা হয়েছে।</div>
-                </div>
+            <div class="section-header">১. বিভিন্ন ধরনের আবাসস্থল</div>
+            <p>জীবের বসবাসের জন্য বিভিন্ন ধরনের পরিবেশ রয়েছে। যেমন— স্থলজ, জলজ, মরু অঞ্চলের পরিবেশ।</p>
+
+            <div class="habitat-grid">
+                <div class="habitat-box" onclick="showInfo('forest')">🌲 বনজ</div>
+                <div class="habitat-box" onclick="showInfo('desert')">🌵 মরুভূমি</div>
+                <div class="habitat-box" onclick="showInfo('water')">🌊 জলজ</div>
+                <div class="habitat-box" onclick="showInfo('polar')">❄️ মেরু অঞ্চল</div>
             </div>
 
-            <!-- Chapter 3 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৩</div>
-                    <div class="chapter-title">খাদ্য</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">সুষম খাদ্যের উপাদান এবং শরীর সুস্থ রাখার উপায়।</div>
-                </div>
+            <div id="forest" class="detail-view">
+                <strong>বনজ আবাসস্থল:</strong> যখন কোনো স্থানে প্রাকৃতিক ভাবে প্রচুর উদ্ভিদ জন্মায় তখন সেখানে বনের সৃষ্টি হয়। যেমন— সুন্দরবন। এখানে বাঘ, হরিণ, বানর বাস করে।
+            </div>
+            <div id="desert" class="detail-view">
+                <strong>মরুজ আবাসস্থল:</strong> মরুভূমি হলো অত্যন্ত শুষ্ক অঞ্চল যেখানে বৃষ্টিপাত খুব কম হয়। এখানে উট, ক্যাতটাস এবং গিরগিটি দেখা যায়।
+            </div>
+            <div id="water" class="detail-view">
+                <strong>জলজ আবাসস্থল:</strong> সমুদ্র, নদী, পুকুর হলো জলজ আবাসস্থল। এখানে মাছ, শাপলা, কচুরিপানা ও বিভিন্ন শৈবাল থাকে।
+            </div>
+            <div id="polar" class="detail-view">
+                <strong>মেরু আবাসস্থল:</strong> পৃথিবীর যেসব অঞ্চল বরফে ঢাকা থাকে। এখানে শ্বেত ভাল্লুক, সিল ও পেঙ্গুইন বাস করে।
             </div>
 
-            <!-- Chapter 4 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৪</div>
-                    <div class="chapter-title">বয়ঃসন্ধিকাল</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">শারীরিক ও মানসিক পরিবর্তনের এই গুরুত্বপূর্ণ সময় নিয়ে বিস্তারিত তথ্য।</div>
-                </div>
-            </div>
+            <div class="section-header">২. জীবের অভিযোজন</div>
+            <p>নির্দিষ্ট বাসস্থানে টিকে থাকার জন্য জীবের যে পরিবর্তন ঘটে, তাকে <strong>অভিযোজন</strong> বলে। যেমন: কচুরিপানার কান্ডে বায়ুকুঠুরি থাকে যা তাকে ভাসতে সাহায্য করে।</p>
 
-            <!-- Chapter 5 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৫</div>
-                    <div class="chapter-title">পদার্থের গঠন</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">পদার্থ কী দিয়ে গঠিত এবং এর বিভিন্ন অবস্থা।</div>
-                </div>
-            </div>
+            <div class="img-placeholder">অভিযোজন চিত্র (কচুরিপানা, হাঁসের পা)</div>
 
-            <!-- Chapter 6 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৬</div>
-                    <div class="chapter-title">শক্তির রূপান্তর</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">বিদ্যুৎ শক্তি থেকে তাপ শক্তি—শক্তির বদলে যাওয়ার নানা উদাহরণ।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 7 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৭</div>
-                    <div class="chapter-title">বলের ধারণা</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">ঠেলা বা টান কীভাবে বস্তুর গতির পরিবর্তন করে।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 8 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৮</div>
-                    <div class="chapter-title">ভূমিরূপ</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">পাহাড়, সমতল ভূমি এবং পৃথিবীর বাইরের স্তরের গঠন।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 9 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ৯</div>
-                    <div class="chapter-title">পরিবেশ সংরক্ষণ</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">আমাদের চারপাশের পরিবেশকে দূষণমুক্ত রাখার উপায়।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 10 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ১০</div>
-                    <div class="chapter-title">পৃথিবীর গতি</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">দিন-রাত হওয়া এবং ঋতু পরিবর্তনের কারণসমূহ।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 11 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ১১</div>
-                    <div class="chapter-title">জলবায়ু পরিবর্তন</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">গ্লোবাল ওয়ার্মিং এবং বৈশ্বিক জলবায়ুর বর্তমান অবস্থা।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 12 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ১২</div>
-                    <div class="chapter-title">আমাদের জীবনে প্রযুক্তি</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">দৈনন্দিন জীবনে বিজ্ঞানের আশীর্বাদ ও আধুনিক যন্ত্রপাতি।</div>
-                </div>
-            </div>
-
-            <!-- Chapter 13 -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <div class="chapter-badge">অধ্যায় ১৩</div>
-                    <div class="chapter-title">সমস্যা সমাধানে তথ্য ও যোগাযোগ প্রযুক্তি</div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">ইন্টারনেট ও কম্পিউটারের ব্যবহার করে জীবন সহজ করার উপায়।</div>
-                </div>
-            </div>
-
-            <!-- Glossary -->
-            <div class="accordion-item">
-                <div class="accordion-header" style="background-color: #fff;">
-                    <div class="chapter-badge" style="border-right: none; width: 100px;">শব্দকোষ</div>
-                    <div class="chapter-title"></div>
-                    <div class="arrow-icon">▼</div>
-                </div>
-                <div class="accordion-content">
-                    <div class="inner-padding">গুরুত্বপূর্ণ শব্দের অর্থ ও সংজ্ঞা।</div>
-                </div>
-            </div>
-
+            <h3>পর্যবেক্ষণ ছক:</h3>
+            <table>
+                <tr>
+                    <th>উদ্ভিদ/প্রাণী</th>
+                    <th>আবাসস্থল</th>
+                    <th>অভিযোজনগত বৈশিষ্ট্য</th>
+                </tr>
+                <tr>
+                    <td>সুন্দরী গাছ</td>
+                    <td>লোনা মাটির বন</td>
+                    <td>শ্বাসমূল (Pneumatophore)</td>
+                </tr>
+                <tr>
+                    <td>উট</td>
+                    <td>মরুভূমি</td>
+                    <td>শরীরে জল ও খাদ্য সঞ্চয় রাখা</td>
+                </tr>
+                <tr>
+                    <td>শাপলা</td>
+                    <td>পুকুর/বিল</td>
+                    <td>নরম কান্ড ও জলে ভাসমান পাতা</td>
+                </tr>
+            </table>
         </div>
     </main>
 
-    <footer class="app-footer">
-        © ২০২৬ প্রাথমিক বিজ্ঞান শিক্ষা পোর্টাল
-    </footer>
-
     <script>
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                const isActive = parent.classList.contains('active');
-
-                // Close all others
-                document.querySelectorAll('.accordion-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Toggle current
-                if (!isActive) {
-                    parent.classList.add('active');
-                    // Smooth scroll to the item if it's partly off-screen
-                    setTimeout(() => {
-                        parent.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 300);
-                }
+        function showInfo(id) {
+            // Hide all detail views
+            document.querySelectorAll('.detail-view').forEach(view => {
+                view.style.display = 'none';
             });
-        });
+            // Show the selected one
+            document.getElementById(id).style.display = 'block';
+            // Scroll into view
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     </script>
+
 </body>
 </html>
