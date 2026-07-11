@@ -313,3 +313,71 @@ export const libraryData = [
                     { title: "অধ্যায় ৯: হাতি আর শিয়ালের গল্প 🦊", url: "/books/c5/bangla/ch9.pdf" },
                     { title: "অধ্যায় ১০: দুই তীরে (কবিতা) ও রওশন আরা 🌊", url: "/books/c5/bangla/ch10.pdf" }
                 ]
+            },
+            {
+                id: "c5-english",
+                subjectName: "English for Today",
+                icon: "fa-rocket",
+                btnClass: "sub-english",
+                chapters: [
+                    { title: "Unit 1 - 5: Hello, Saint Martin's & Liberation War Museum 🏝️", url: "/books/c5/english/u1.pdf" },
+                    { title: "Unit 6 - 12: Eat Healthy, Leisure Time & Birthday 🎂", url: "/books/c5/english/u2.pdf" },
+                    { title: "Unit 13 - 18: My Home District, Olympic Games & Telling Story 🏆", url: "/books/c5/english/u3.pdf" },
+                    { title: "Unit 19 - 25: Happy Birthday, The Liberation War & Life is Beautiful 🌟", url: "/books/c5/english/u4.pdf" }
+                ]
+            },
+            {
+                id: "c5-math",
+                subjectName: "প্রাথমিক গণিত",
+                icon: "fa-calculator",
+                btnClass: "sub-math",
+                chapters: [
+                    { title: "অধ্যায় ১: চার প্রক্রিয়া সম্পর্কিত হিসাব (যোগ, বিয়োগ, গুণ, ভাগ) ➕", url: "/books/c5/math/ch1.pdf" },
+                    { title: "অধ্যায় ২: লসাগু এবং গসাগু-এর গভীর নিয়ম 🧮", url: "/books/c5/math/ch2.pdf" },
+                    { title: "অধ্যায় ৩: সাধারণ ভগ্নাংশ ও হিসাব 📊", url: "/books/c5/math/ch3.pdf" },
+                    { title: "অধ্যায় ৪: দশমিক ভগ্নাংশের হিসাব ও রূপান্তর 📉", url: "/books/c5/math/ch4.pdf" },
+                    { title: "অধ্যায় ৫: গড় ও গড়ের গাণিতিক সমাধান 📈", url: "/books/c5/math/ch5.pdf" },
+                    { title: "অধ্যায় ৬: শতকরা, লাভ ও ক্ষতি 💯", url: "/books/c5/math/ch6.pdf" },
+                    { title: "অধ্যায় VII: জ্যামিতি (বৃত্ত, চতুর্ভুজ ও সামান্তরিক) 📐", url: "/books/c5/math/ch7.pdf" },
+                    { title: "অধ্যায় ৮: পরিমাপ (ক্ষেত্রফল ও আয়তন) 📏", url: "/books/c5/math/ch8.pdf" },
+                    { title: "অধ্যায় ৯: সময় ও ক্যালেন্ডারের হিসাব ⏱️", url: "/books/c5/math/ch9.pdf" },
+                    { title: "অধ্যায় ১০: উপাত্ত বিন্যস্তকরণ ও গ্রাফ চিত্র 📊", url: "/books/c5/math/ch10.pdf" }
+                ]
+            },
+            {
+                id: "c5-science",
+                subjectName: "প্রাথমিক বিজ্ঞান",
+                icon: "fa-flask",
+                btnClass: "sub-science",
+                chapters: [
+                    { title: "অধ্যায় ১: আমাদের পরিবেশ ও শক্তির পারস্পরিক নির্ভরতা ☀️", url: "/books/c5/science/ch1.pdf" },
+                    { title: "অধ্যায় ২: পরিবেশ দূষণ ও বায়ু, পানি, মাটি দূষণের প্রতিকার 🏭", url: "/books/c5/science/ch2.pdf" },
+                    { title: "অধ্যায় ৩: জীবন রক্ষায় নিরাপদ পানি ও পানি চক্র 💧", url: "/books/c5/science/ch3.pdf" },
+                    { title: "অধ্যায় ৪: সুস্থ জীবনের জন্য খাদ্য ও জাঙ্ক ফুড পরিহার 🥗", url: "/books/c5/science/ch4.pdf" },
+                    { title: "অধ্যায় ৫: পদার্থ, শক্তি এবং শক্তির রূপান্তর ⚡", url: "/books/c5/science/ch5.pdf" },
+                    { title: "অধ্যায় ৬: জলবায়ু পরিবর্তন ও বৈশ্বিক উষ্ণতা 🌡️", url: "/books/c5/science/ch6.pdf" },
+                    { title: "অধ্যায় VII: আমাদের মহাবিশ্ব, গ্যালাক্সি ও দূরবীন 🌌", url: "/books/c5/science/ch7.pdf" },
+                    { title: "অধ্যায় ৮: স্বাস্থ্যবিধি ও সংক্রামক রোগ প্রতিরোধ 🦠", url: "/books/c5/science/ch8.pdf" },
+                    { title: "অধ্যায় ৯: আমাদের জীবনে তথ্য ও ডিজিটাল যোগাযোগ 💻", url: "/books/c5/science/ch9.pdf" },
+                    { title: "অধ্যায় ১০: মানব সৃষ্টি ও প্রাকৃতিক সম্পদ সংরক্ষণ 🌳", url: "/books/c5/science/ch10.pdf" }
+                ]
+            },
+            {
+                id: "c5-bgs",
+                subjectName: "বাংলাদেশ ও বিশ্বপরিচয়",
+                icon: "fa-globe",
+                btnClass: "sub-history",
+                chapters: [
+                    { title: "অধ্যায় ১: আমাদের মুক্তিযুদ্ধ এবং ৭ই মার্চের ভাষণ 🎖️", url: "/books/c5/bgs/ch1.pdf" },
+                    { title: "অধ্যায় ২: ব্রিটিশ শাসন, সিপাহী বিদ্রোহ ও বাংলার ইতিহাস 🏛️", url: "/books/c5/bgs/ch2.pdf" },
+                    { title: "অধ্যায় ৩: আমাদের অধিকার, শিশু শ্রম ও মানবাধিকার 📜", url: "/books/c5/bgs/ch3.pdf" },
+                    { title: "অধ্যায় ৪: বাংলাদেশের অর্থনীতি, কৃষি ও প্রধান শিল্পসমূহ 🌾", url: "/books/c5/bgs/ch4.pdf" },
+                    { title: "অধ্যায় ৫: জনসংখ্যা ও আমাদের পরিবার পরিকল্পনা 👥", url: "/books/c5/bgs/ch5.pdf" },
+                    { title: "অধ্যায় ৬: জলবায়ু ও দুর্যোগ মোকাবিলা 🌪️", url: "/books/c5/bgs/ch6.pdf" },
+                    { title: "অধ্যায় VII: আমাদের বিভিন্ন জাতীয় দিবস ও স্মারক 🇧🇩", url: "/books/c5/bgs/ch7.pdf" },
+                    { title: "অধ্যায় ৮: জাতিসংঘ ও বিভিন্ন আন্তর্জাতিক সংস্থা 🇺🇳", url: "/books/c5/bgs/ch8.pdf" }
+                ]
+            }
+        ]
+    }
+];
