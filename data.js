@@ -345,23 +345,27 @@ export const libraryData = [
                 ]
             },
             {
-                id: "c5-science",
-                subjectName: "প্রাথমিক বিজ্ঞান",
-                icon: "fa-flask",
-                btnClass: "sub-science",
-                chapters: [
-                    { title: "অধ্যায় ১: আমাদের পরিবেশ ও শক্তির পারস্পরিক নির্ভরতা ☀️", url: "/books/c5/science/ch1.pdf" },
-                    { title: "অধ্যায় ২: পরিবেশ দূষণ ও বায়ু, পানি, মাটি দূষণের প্রতিকার 🏭", url: "/books/c5/science/ch2.pdf" },
-                    { title: "অধ্যায় ৩: জীবন রক্ষায় নিরাপদ পানি ও পানি চক্র 💧", url: "/books/c5/science/ch3.pdf" },
-                    { title: "অধ্যায় ৪: সুস্থ জীবনের জন্য খাদ্য ও জাঙ্ক ফুড পরিহার 🥗", url: "/books/c5/science/ch4.pdf" },
-                    { title: "অধ্যায় ৫: পদার্থ, শক্তি এবং শক্তির রূপান্তর ⚡", url: "/books/c5/science/ch5.pdf" },
-                    { title: "অধ্যায় ৬: জলবায়ু পরিবর্তন ও বৈশ্বিক উষ্ণতা 🌡️", url: "/books/c5/science/ch6.pdf" },
-                    { title: "অধ্যায় VII: আমাদের মহাবিশ্ব, গ্যালাক্সি ও দূরবীন 🌌", url: "/books/c5/science/ch7.pdf" },
-                    { title: "অধ্যায় ৮: স্বাস্থ্যবিধি ও সংক্রামক রোগ প্রতিরোধ 🦠", url: "/books/c5/science/ch8.pdf" },
-                    { title: "অধ্যায় ৯: আমাদের জীবনে তথ্য ও ডিজিটাল যোগাযোগ 💻", url: "/books/c5/science/ch9.pdf" },
-                    { title: "অধ্যায় ১০: মানব সৃষ্টি ও প্রাকৃতিক সম্পদ সংরক্ষণ 🌳", url: "/books/c5/science/ch10.pdf" }
-                ]
-            },
+    id: "c5-science",
+    subjectName: "প্রাথমিক বিজ্ঞান",
+    icon: "fa-flask",
+    btnClass: "sub-science",
+    chapters: [
+        { title: "অধ্যায় ১: জীবের আবাসস্থল 🏡", url: "/books/c5/science/ch1.pdf" },
+        { title: "অধ্যায় ২: জীব ও পরিবেশের পারস্পরিক নির্ভরশীলতা 🔄", url: "/books/c5/science/ch2.pdf" },
+        { title: "অধ্যায় ৩: খাদ্য 🍏", url: "/books/c5/science/ch3.pdf" },
+        { title: "অধ্যায় ৪: বয়ঃসন্ধিকাল 🧘", url: "/books/c5/science/ch4.pdf" },
+        { title: "অধ্যায় ৫: পদার্থের গঠন ⚛️", url: "/books/c5/science/ch5.pdf" },
+        { title: "অধ্যায় ৬: শক্তির রূপান্তর ⚡", url: "/books/c5/science/ch6.pdf" },
+        { title: "অধ্যায় ৭: বলের ধারণা 🏃‍♂️", url: "/books/c5/science/ch7.pdf" },
+        { title: "অধ্যায় ৮: ভূমিরূপ ⛰️", url: "/books/c5/science/ch8.pdf" },
+        { title: "অধ্যায় ৯: পরিবেশ সংরক্ষণ 🌳", url: "/books/c5/science/ch9.pdf" },
+        { title: "অধ্যায় ১০: পৃথিবীর গতি 🌍", url: "/books/c5/science/ch10.pdf" },
+        { title: "অধ্যায় ১১: জলবায়ু পরিবর্তন 🌡️", url: "/books/c5/science/ch11.pdf" },
+        { title: "অধ্যায় ১২: আমাদের জীবনে প্রযুক্তি 💻", url: "/books/c5/science/ch12.pdf" },
+        { title: "অধ্যায় ১৩: সমস্যা সমাধানে তথ্য ও যোগাযোগ প্রযুক্তি 📞", url: "/books/c5/science/ch13.pdf" },
+        { title: "শব্দকোষ (Glossary) 📖", url: "/books/c5/science/glossary.pdf" }
+    ]
+},
             {
                 id: "c5-bgs",
                 subjectName: "বাংলাদেশ ও বিশ্বপরিচয়",
