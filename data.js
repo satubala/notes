@@ -1,70 +1,47 @@
-import { libraryData } from './data.js';
-
-const libraryRoot = document.getElementById('library-root');
-
-// সম্পূর্ণ অ্যাপের UI ডাইনামিকভাবে তৈরি করার ফাংশন
-function renderLibrary() {
-    let htmlContent = '';
-
-    libraryData.forEach(cls => {
-        htmlContent += `
-            <div class="accordion-item">
-                <button class="accordion-toggle class-btn" style="background: ${cls.themeColor}; box-shadow: 0 6px 0 #222;">
-                    <span class="btn-text"><i class="fa-solid ${cls.icon} icon-pop"></i> ${cls.className}</span>
-                </button>
-                <div class="accordion-content subjects-container">
-                    ${cls.subjects.map(sub => `
-                        <div class="accordion-item">
-                            <button class="accordion-toggle subject-btn ${sub.btnClass}">
-                                <span class="btn-text"><i class="fa-solid ${sub.icon}"></i> ${sub.subjectName}</span>
-                            </button>
-                            <div class="accordion-content chapters-container">
-                                <ul class="chapter-list">
-                                    ${sub.chapters.map((ch, index) => `
-                                        <li>
-                                            <a href="${ch.url}" target="_blank">
-                                                <span class="badge">${index + 1}</span> ${ch.title}
-                                            </a>
-                                        </li>
-                                    `).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-    });
-
-    libraryRoot.innerHTML = htmlContent;
-    initAccordionLogic();
-}
-
-// ক্লিক ইভেন্ট হ্যান্ডলার (৩ডি পুশ ইফেক্ট সহ)
-function initAccordionLogic() {
-    document.querySelectorAll('.accordion-toggle').forEach(button => {
-        button.addEventListener('click', (e) => {
-            // ইভেন্ট বাবলিং থামানোর জন্য
-            e.stopPropagation();
-            
-            const content = button.nextElementSibling;
-            button.classList.toggle('active');
-            
-            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                content.style.maxHeight = '0px';
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                
-                // নেস্টেড কন্টেইনারের হাইট ঠিক করা
-                let parent = button.closest('.subjects-container');
-                while (parent) {
-                    parent.style.maxHeight = (parent.scrollHeight + content.scrollHeight) + "px";
-                    parent = parent.parentElement.closest('.subjects-container');
-                }
+export const libraryData = [
+    {
+        id: "class-1",
+        className: "১ম শ্রেণী",
+        themeColor: "#ff4081",
+        icon: "fa-gamepad",
+        subjects: [
+            {
+                id: "c1-bangla",
+                subjectName: "আমার বাংলা বই",
+                icon: "fa-paint-brush",
+                btnClass: "sub-bangla",
+                chapters: [
+                    { title: "অধ্যায় ১: পাঠ সূচনা 🌟", url: "/books/c1/bangla/ch1.pdf" },
+                    { title: "অধ্যায় ২: আমাদের দেশ 🇧🇩", url: "/books/c1/bangla/ch2.pdf" }
+                ]
+            },
+            {
+                id: "c1-english",
+                subjectName: "English for Today",
+                icon: "fa-rocket",
+                btnClass: "sub-english",
+                chapters: [
+                    { title: "Unit 1: Greetings 👋", url: "/books/c1/english/unit1.pdf" }
+                ]
             }
-        });
-    });
-}
-
-// অ্যাপ চালু করা
-renderLibrary();
+        ]
+    },
+    {
+        id: "class-2",
+        className: "২য় শ্রেণী",
+        themeColor: "#00e676",
+        icon: "fa-ice-cream",
+        subjects: [
+            {
+                id: "c2-math",
+                subjectName: "প্রাথমিক গণিত",
+                icon: "fa-calculator",
+                btnClass: "sub-math",
+                chapters: [
+                    { title: "অধ্যায় ১: সংখ্যা গণনা 🔢", url: "/books/c2/math/ch1.pdf" }
+                ]
+            }
+        ]
+    }
+    // ৩য়, ৪থ ও ৫ শ্রেণীর ডাটা এখানে এভাবেই সহজে যুক্ত করা যাবে
+];
