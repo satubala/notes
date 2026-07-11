@@ -12,7 +12,7 @@ export const libraryData = [
                 btnClass: "sub-bangla",
                 chapters: [
                     { title: "অধ্যায় ১: পাঠ সূচনা 🌟", url: "/books/c1/bangla/ch1.pdf" },
-                    { title: "অধ্যায় ২: আমাদের দেশ 🇧🇩", url: "/books/c1/bangla/ch2.pdf" }
+                    { title: "অধ্যায় ২: আমাদের দেশ 🇧🇩", url: "/books/c1/bangla/ch2.pdf" },
                     { title: "অধ্যায় ৩: আমাদের নদী 🇧🇩", url: "/books/c1/bangla/ch2.pdf" }
                 ]
             },
