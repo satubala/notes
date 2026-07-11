@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primary Digital Library</title>
+    <title>প্রাথমিক ডিজিটাল লাইব্রেরি</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="library-container">
-        <h1>📚 Primary Digital Library</h1>
+        <h1>📚 প্রাথমিক ডিজিটাল লাইব্রেরি</h1>
         
-        <div class="accordion-item class-item">
-            <button class="accordion-toggle class-btn">Class 1</button>
+        <!-- প্রথম শ্রেণী -->
+        <div class="accordion-item">
+            <button class="accordion-toggle class-btn">১ম শ্রেণী</button>
             <div class="accordion-content subjects-container">
                 
-                <div class="accordion-item subject-item">
-                    <button class="accordion-toggle subject-btn">Amar Bangla Boi</button>
+                <!-- বিষয়: বাংলা -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle subject-btn">আমার বাংলা বই</button>
                     <div class="accordion-content chapters-container">
                         <ul>
-                            <li><a href="#">Chapter 1: Path Shuchona</a></li>
-                            <li><a href="#">Chapter 2: Amader Desh</a></li>
-                            <li><a href="#">Chapter 3: Bornomala</a></li>
+                            <li><a href="#">অধ্যায় ১: পাঠ সূচনা</a></li>
+                            <li><a href="#">অধ্যায় ২: আমাদের দেশ</a></li>
+                            <li><a href="#">অধ্যায় ৩: বর্ণমালা পরিচয়</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="accordion-item subject-item">
+                <!-- বিষয়: ইংরেজি -->
+                <div class="accordion-item">
                     <button class="accordion-toggle subject-btn">English for Today</button>
                     <div class="accordion-content chapters-container">
                         <ul>
-                            <li><a href="#">Unit 1: Greetings and Farewells</a></li>
+                            <li><a href="#">Unit 1: Greetings</a></li>
                             <li><a href="#">Unit 2: Alphabet</a></li>
                         </ul>
                     </div>
@@ -39,14 +42,26 @@
             </div>
         </div>
 
-        <div class="accordion-item class-item">
-            <button class="accordion-toggle class-btn">Class 2</button>
+        <!-- দ্বিতীয় শ্রেণী -->
+        <div class="accordion-item">
+            <button class="accordion-toggle class-btn">২য় শ্রেণী</button>
             <div class="accordion-content subjects-container">
-                <p style="padding: 10px;">Subject list coming soon...</p>
+                <!-- বিষয়: বাংলা -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle subject-btn">আমার বাংলা বই</button>
+                    <div class="accordion-content chapters-container">
+                        <ul>
+                            <li><a href="#">অধ্যায় ১: আমাদের ছোট নদী</a></li>
+                            <li><a href="#">অধ্যায় ২: প্রার্থনা</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
-        </div>
+        <!-- এভাবে ৩য়, ৪থ ও ৫ শ্রেণীর জন্য একই ফরম্যাট ব্যবহার করুন -->
+
+    </div>
 
     <script src="script.js"></script>
 </body>
