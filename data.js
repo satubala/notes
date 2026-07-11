@@ -314,18 +314,34 @@ export const libraryData = [
                     { title: "অধ্যায় ১০: দুই তীরে (কবিতা) ও রওশন আরা 🌊", url: "/books/c5/bangla/ch10.pdf" }
                 ]
             },
-            {
-                id: "c5-english",
-                subjectName: "English for Today",
-                icon: "fa-rocket",
-                btnClass: "sub-english",
-                chapters: [
-                    { title: "Unit 1 - 5: Hello, Saint Martin's & Liberation War Museum 🏝️", url: "/books/c5/english/u1.pdf" },
-                    { title: "Unit 6 - 12: Eat Healthy, Leisure Time & Birthday 🎂", url: "/books/c5/english/u2.pdf" },
-                    { title: "Unit 13 - 18: My Home District, Olympic Games & Telling Story 🏆", url: "/books/c5/english/u3.pdf" },
-                    { title: "Unit 19 - 25: Happy Birthday, The Liberation War & Life is Beautiful 🌟", url: "/books/c5/english/u4.pdf" }
-                ]
-            },
+           {
+    id: "c5-english",
+    subjectName: "English for Today",
+    icon: "fa-rocket",
+    btnClass: "sub-english",
+    chapters: [
+        { title: "Unit 1: At the Library 📚", url: "/books/c5/english/u1.pdf" },
+        { title: "Unit 2: Our School Garden 🏡", url: "/books/c5/english/u2.pdf" },
+        { title: "Unit 3: Be Quiet, Please 🤫", url: "/books/c5/english/u3.pdf" },
+        { title: "Unit 4: My Home District 🗺️", url: "/books/c5/english/u4.pdf" },
+        { title: "Unit 5: Student Council 🧑‍াব", url: "/books/c5/english/u5.pdf" },
+        { title: "Unit 6: An Email from Indonesia 📧", url: "/books/c5/english/u6.pdf" },
+        { title: "Unit 7: The Sundarbans 🐅", url: "/books/c5/english/u7.pdf" },
+        { title: "Unit 8: A Field Trip to Remember 🚌", url: "/books/c5/english/u8.pdf" },
+        { title: "Unit 9: Get Ready to Listen 🎧", url: "/books/c5/english/u9.pdf" },
+        { title: "Unit 10: Poem: The Swing 🎡", url: "/books/c5/english/u10.pdf" },
+        { title: "Unit 11: Making Requests 🤝", url: "/books/c5/english/u11.pdf" },
+        { title: "Unit 12: Eating Healthy 🥗", url: "/books/c5/english/u12.pdf" },
+        { title: "Unit 13: Quality Time Together 👨‍👩‍👦", url: "/books/c5/english/u13.pdf" },
+        { title: "Unit 14: The Champion Girl 🏆", url: "/books/c5/english/u14.pdf" },
+        { title: "Unit 15: Poem: The Secret Song 🎵", url: "/books/c5/english/u15.pdf" },
+        { title: "Unit 16: The Giving Tree 🌳", url: "/books/c5/english/u16.pdf" },
+        { title: "Unit 17: The Air We Share 💨", url: "/books/c5/english/u17.pdf" },
+        { title: "Unit 18: Nakshi Kantha 🧵", url: "/books/c5/english/u18.pdf" },
+        { title: "Unit 19: The Wind and the Sun ☀️", url: "/books/c5/english/u19.pdf" },
+        { title: "Unit 20: Writing a Story ✍️", url: "/books/c5/english/u20.pdf" }
+    ]
+},
             {
                 id: "c5-math",
                 subjectName: "প্রাথমিক গণিত",
