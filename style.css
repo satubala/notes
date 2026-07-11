@@ -1,0 +1,71 @@
+body {
+    font-family: "Fredoka", "Hind Siliguri", sans-serif;
+    background: #ffeb3b;
+    background-image: radial-gradient(#fdd835 20%, transparent 20%), radial-gradient(#fdd835 20%, transparent 20%);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    margin: 0; padding: 15px;
+}
+
+/* ৩ডি গেম বক্স */
+.app-container {
+    max-width: 550px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 32px;
+    border: 6px solid #222;
+    box-shadow: 12px 12px 0px #222;
+}
+
+.app-header { text-align: center; margin-bottom: 25px; }
+.main-title { color: #222; font-size: 2.2rem; margin: 0; font-weight: 900; }
+.subtitle { color: #555; font-size: 1.1rem; margin-top: 5px; font-weight: bold; }
+
+/* অ্যানিমেশন ও কোর লজিক */
+.accordion-content {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    padding-left: 10px;
+}
+
+.accordion-toggle {
+    width: 100%; border: 3px solid #222; padding: 16px;
+    font-size: 1.3rem; font-weight: 700; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    border-radius: 20px; margin-top: 12px; transition: all 0.1s ease;
+}
+
+.accordion-toggle:active, .accordion-toggle.active { transform: translateY(4px); }
+.class-btn { color: white; }
+.class-btn:active, .class-btn.active { box-shadow: 0 2px 0 #222 !important; }
+
+/* সাবজেক্ট কালারস */
+.subject-btn { background: #fff; color: #222; box-shadow: 0 5px 0 #222; font-size: 1.15rem; }
+.subject-btn:active, .subject-btn.active { box-shadow: 0 1px 0 #222; }
+.sub-bangla { background: #ff9100; color: white; }
+.sub-english { background: #29b6f6; color: white; }
+.sub-math { background: #b0bec5; }
+
+/* চ্যাপ্টার লিস্ট */
+.chapter-list { list-style: none; padding: 5px 0; margin: 0; }
+.chapter-list li {
+    margin-top: 8px; background: #fff; border: 3px solid #222;
+    border-radius: 16px; box-shadow: 4px 4px 0 #222; transition: transform 0.2s;
+}
+.chapter-list li:hover { transform: scale(1.02) rotate(-0.5deg); background: #fff9c4; }
+.chapter-list li a { text-decoration: none; color: #222; font-weight: 700; padding: 12px; display: flex; align-items: center; }
+.badge { background: #222; color: white; padding: 3px 9px; border-radius: 50%; margin-right: 10px; }
+
+/* বাবল অ্যানিমেশন */
+.bubble-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.bubble { position: absolute; font-size: 2.5rem; animation: floatUp 7s infinite ease-in-out; opacity: 0.6; }
+.bubble:nth-child(1) { left: 5%; animation-delay: 0s; }
+.bubble:nth-child(2) { left: 85%; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 75%; animation-delay: 4.5s; }
+@keyframes floatUp { 0% { transform: translateY(105vh) rotate(0deg); } 100% { transform: translateY(-10vh) rotate(360deg); } }
+
+.icon-pop { animation: wiggle 2s infinite ease-in-out; display: inline-block; }
+@keyframes wiggle { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+.accordion-toggle::after { content: '➔'; transition: transform 0.2s; font-size: 1.1rem; }
+.accordion-toggle.active::after { transform: rotate(90deg); }
