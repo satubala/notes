@@ -1,7 +1,7 @@
 export const libraryData = [
     {
         id: "class-1",
-        className: "১ম শ্রেণী",
+        className: "১ম শ্রেণি",
         themeColor: "#ff4081",
         icon: "fa-gamepad",
         subjects: [
@@ -28,7 +28,7 @@ export const libraryData = [
     },
     {
         id: "class-2",
-        className: "২য় শ্রেণী",
+        className: "২য় শ্রেণি",
         themeColor: "#00e676",
         icon: "fa-ice-cream",
         subjects: [
@@ -43,5 +43,5 @@ export const libraryData = [
             }
         ]
     }
-    // ৩য়, ৪থ ও ৫ শ্রেণীর ডাটা এখানে এভাবেই সহজে যুক্ত করা যাবে
+    // ৩য়, ৪থ ও ৫ শ্রেণির ডাটা এখানে এভাবেই সহজে যুক্ত করা যাবে
 ];
